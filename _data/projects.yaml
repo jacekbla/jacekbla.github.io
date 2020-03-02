@@ -1,0 +1,14 @@
+- name: Libraries
+  projects:
+    - name: Stash
+      description: This caching library supports multiple backends with a consistent frontend. It supports hierarchical keys, stampede and dogpile protection, automatic miss distribution, and more.
+      github: tedious/Stash
+      documentation: https://www.stashphp.com/
+      packagist: tedivm/stash
+      icon: fab fa-php
+
+    - name: JShrink
+      description: This library minifies javascript using 100% pure PHP, allowing it to be integrated into applications with minimal work and maximum compatibility.
+      github: tedious/JShrink
+      packagist: tedivm/jshrink
+      icon: fab fa-php
