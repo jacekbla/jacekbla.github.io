@@ -124,6 +124,10 @@ GEM
       jekyll (~> 3.3)
     jekyll-sitemap (1.1.1)
       jekyll (~> 3.3)
+    jekyll-sleek (0.1.8)
+      jekyll (~> 3.6)
+      jekyll-seo-tag (~> 2.3)
+      jekyll-sitemap (~> 1.1)
     jekyll-swiss (0.4.0)
     jekyll-theme-architect (0.1.0)
       jekyll (~> 3.5)
@@ -223,6 +227,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-remote-theme
+  jekyll-sleek
 
 BUNDLED WITH
    2.1.4

@@ -1,19 +1,24 @@
 # This is how Jekyll knows to use this theme.
-remote_theme: tedivm/jekyll-theme-portfolio
+theme: jekyll-sleek
 
+# THEME SETTINGS
+navigation: # Navigation links
+  - {name: 'Home', link: '/'}
+  - {name: 'About', link: '/about'}
+  - {name: 'Contact', link: '/contact'}
 
-title: Your awesome title
-author: Your Name
-email: your-email@domain.com
+title: Portfolio
+author: Jacek Blady
+email: jacek.bldy@gmail.com
 description: >
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
+hero_img: koto.jpg
 
 
 # Header Links - all optional. If set these create header links.
 homepage: https://your.homepage.com
-twitter_username: example
 github_username: example
 linkedin_username: example
 
