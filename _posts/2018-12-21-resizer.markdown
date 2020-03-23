@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Resizer"
+date:   2018-12-21 23:12:50 +0100
+featured-img: suru
+---
+Projekt ma na celu implementację programu wykorzystującego techniki zmiany wielkości obrazu z uwzględnieniem jego zawartości oraz analizę problemu z wykorzystaniem utworzonej aplikacji. Na początku zamieszczono opis problemu i przegląd rozwiązań dostępnych na rynku. Następnie przedstawiono projekt aplikacji autorskiej. Oprogramowanie ma pozwolić na zmianę rozmiaru obrazu z uwzględnieniem jego zawartości oraz zaprezentować niektóre funkcje dostępne dzięki wykorzystaniu tych technik. Zdefiniowane zostały również standardowe opcje skalowania i przycinania grafiki, aby możliwe było porównanie różnych technik. Dalej praca opisuje sposób działania algorytmu Seam-Carving będącego podstawą działania programu. Przedstawiona teoria znalazła praktyczne zastosowanie w implementacji, której opis zawarto w następnej części pracy. Po kolei scharakteryzowano etapy składające się na mechanizm zmiany wielkości obrazu biorący pod uwagę zawartość oraz funkcjonalności, oparte o te rozwiązania. Aplikacja została przetestowana z wykorzystaniem kilku platform testowych, a następnie wyniki jej pracy zostały poddane analizie. W tym celu utworzono program pomocniczy, którego zadaniem była ocena zmodyfikowanych obrazów. Analiza bierze pod uwagę wiele przypadków testowych i porównuje je, wykorzystując zdefiniowane miary. Na koniec podsumowano przeprowadzone badania i przedstawiono wnioski ogólne dotyczące pracy.

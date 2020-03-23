@@ -1,0 +1,157 @@
+---
+layout: post
+title:  "Stratego"
+date:   2018-03-28 23:12:50 +0100
+featured-img: minmax
+---
+Wstęp
+Głównym celem ćwiczenia było zapoznanie się i przenalizowanie algorytmów rozwiązywania gier logicznych. Badania należało przeprowadzić na zaimplementowanym silniku gry „Stratego”.
+Podstawowe algorytmy rozwiązywania gier
+min-max
+Min-max jest algorytmem stosowanym dla minimalizacji możliwej straty w scenariuszu najgorszego przypadku (maksymalna strata) i maksymalizacji minimalnego zysku. Pierwotnie sformułowany dla teorii gier o sumie zerowej dwóch graczy, obejmujący zarówno przypadki, w których gracze wykonują ruchy alternatywne, jak i te, w których wykonują ruchy jednocześnie, został również rozszerzony na bardziej złożone gry i do ogólnego podejmowania decyzji w obecności niepewności.
+alfa-beta
+Przycinanie alfa-beta to algorytm wyszukiwania, który ma na celu zmniejszenie liczby węzłów, które są oceniane przez algorytm min-max w drzewie wyszukiwania. Jest to algorytm wyszukiwania przeciwnika, powszechnie stosowany w grach komputerowych w grach dwuosobowych.
+
+Porównanie wyników
+Wyniki te są efektem badań rozgrywek różnych strategii i algorytmów. Jeden z przeciwników zawsze posługuje się algorytmem min-max ze standardowym przechodzeniem po węzłach drzewa. Drugi gracz jest przedmiotem badań i będzie zmieniany w czasie eksperymentów.
+Min-max
+	depth = 3
+	time	points
+N = 3	183	6
+N = 4	2169	0
+N = 5	13214	-6
+N = 6	81053	-18
+N = 7	274006	20
+
+
+	N = 4
+	time	points
+depth = 1	36	-16
+depth = 2	114	-16
+depth = 3	2168	0
+depth = 4	56800	-6
+depth = 5	438329	-5
+
+Alfa-beta
+	depth = 3
+	time	points	cut
+N = 3	160	6	49
+N = 4	2088	0	196
+N = 5	12171	10	772
+N = 6	77169	10	2853
+N = 7	250551	22	7436
+
+	N = 4
+	time	points	cut
+depth = 1	35	-16	0
+depth = 2	112	-8	53
+depth = 3	2058	0	196
+depth = 4	53171	0	713
+depth = 5	1233110	-6	2652
+
+
+Heurystyki 
+Heurystyki oceny stanu gry
+Zastosowałem 3 heurystyki do oceny stanu gry:
+•	standardowa – kolory nie mają znaczenia, punkty przyznawane za pełną linię od krawędzi do krawędzi. Liczba punktów wynosi tyle co długość linii.
+•	kolorowa – kolory mają znaczenie, punkty przyznawane za pełną linię od krawędzi do krawędzi. Liczba punktów wynosi tyle co liczba pól o kolorze gracza w linii.
+•	jeden za linie – niezależnie od kolory gracze dostają po 1 punkcie po domknięciu linii.
+Badania dotyczące heurystyk przeprowadziłem wykorzystując algorytm alfa-beta.
+
+Standard	depth = 3
+	time	points
+N = 3	160	6
+N = 4	2088	0
+N = 5	12171	10
+N = 6	77169	10
+N = 7	250551	22
+
+Standard	N = 4
+	time	points
+depth = 1	35	-16
+depth = 2	112	-8
+depth = 3	2058	0
+depth = 4	53171	0
+depth = 5	1233110	-6
+
+Color	depth = 3
+	time	points
+N = 3	164	-3
+N = 4	2121	-9
+N = 5	12611	-8
+N = 6	76355	-10
+N = 7	253283	-9
+
+Color	N = 4
+	time	points
+depth = 1	37	-11
+depth = 2	116	-8
+depth = 3	2021	-9
+depth = 4	53543	-11
+depth = 5	1239318	-16
+
+One-to-one	depth = 3
+	time	points
+N = 3	159	2
+N = 4	2164	0
+N = 5	12174	0
+N = 6	75207	-2
+N = 7	250849	-4
+
+One-to-one	N = 4
+	time	points
+depth = 1	34	-4
+depth = 2	131	-2
+depth = 3	2108	188
+depth = 4	52964	-2
+depth = 5	1233157	-2
+
+
+Heurystyki wyboru kolejności węzłów
+Zaimplementowałem 2 heurystyki wyboru kolejności węzłów:
+•	standardowa – węzły wybierane są po kolei
+•	losowa – węzły wybierane są w kolejności losowej
+Badania dotyczące heurystyk przeprowadziłem wykorzystując algorytm alfa-beta, według standardowej oceny stanu.
+
+Standard	depth = 3
+	time	points	cut
+N = 3	160	6	49
+N = 4	2088	0	196
+N = 5	12171	10	772
+N = 6	77169	10	2853
+N = 7	250551	22	7436
+
+Standard	N = 4
+	time	points	cut
+depth = 1	35	-16	0
+depth = 2	112	-8	53
+depth = 3	2058	0	196
+depth = 4	53171	0	713
+depth = 5	1233110	-6	2652
+
+Random	depth = 3
+	time	points	cut
+N = 3	161	12	20
+N = 4	2033	-10	63
+N = 5	11982	-6	156
+N = 6	74165	-24	323
+N = 7	242006	-6	600
+
+Random	N = 4
+	time	points	cut
+depth = 1	37	-14	0
+depth = 2	114	-22	63
+depth = 3	1982	-10	63
+depth = 4	20613	-27	714
+depth = 5	1228464	-16	613
+
+
+Wpływ zastosowanych heurystyk 
+•	Czasowo heurystyka one-to-one wychodzi najlepiej
+•	Algorytm liczy wartości poszczególnych węzłów mniej więcej podobnie
+•	Dla heurystyki uwzględniającej kolor trzeba było utworzyć nowe rodzaje węzłów
+•	Dla standardowego przechodzenia po węzłach liczba obciętych gałęzi jest większa
+•	Algorytmy alfa-beta działa szybciej niż min-max chociaż zysk jest mniejszy niż się spodziewałem
+•	Dzięki algorytmowi alfa-beta możemy pominąć niektóre węzły w naszym algorytmie
+Podsumowanie
+Problem rozwiązywania gier jest ciekawym zagadnieniem, dzięki któremu możemy rozwiązywać wiele dzisiejszych problemów. Algorytmy przedstawione na zajęciach dobrze się sprawdzają w zaprezentowanych problemach. Algorytm alfa-beta pozwala zmniejszyć liczbę węzłów, które należy przejść w celu znalezienia odpowiedniego ruchu. Na szybkość działania algorytmu duży wpływ na głębokość drzewa, rozmiar planszy stanowi mniejszy problem. Niektóre heurystyki wykorzystane w nieprawidłowy sposób mogą pogorszyć pracę algorytmu, dlatego należy poważnie przemyśleć jaką heurystykę gdzie zastosować. Moje heurystyki oceny stanu gry zmieniają zasady gry, o co jak ustaliliśmy na zajęciach niestety nie chodziło w tym zadaniu. Niemniej przeprowadzone badania pozwoliły na zgłębienie zagadnień omawianych na wkładzie i stanowiły ciekawy element zajęć.

@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Wziuum"
+date:   2019-11-15 23:12:50 +0100
+featured-img: wzium
+---
+Python
+C#

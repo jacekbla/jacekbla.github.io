@@ -3,9 +3,9 @@ theme: jekyll-sleek
 
 # THEME SETTINGS
 navigation: # Navigation links
-  - {name: 'Home', link: '/'}
-  - {name: 'About', link: '/about'}
-  - {name: 'Contact', link: '/contact'}
+  - {name: 'Strona główna', link: '/'}
+  - {name: 'O mnie', link: '/about'}
+  - {name: 'Kontakt', link: '/contact'}
 
 title: Portfolio
 author: Jacek Blady
@@ -14,13 +14,12 @@ description: >
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-hero_img: koto.jpg
+hero_img: wallpaper4.png
 
 
 # Header Links - all optional. If set these create header links.
-homepage: https://your.homepage.com
-github_username: example
-linkedin_username: example
+github_username: jacekbla
+linkedin_username: jacek-blady
 
 
 plugins:
