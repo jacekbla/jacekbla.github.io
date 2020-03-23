@@ -2,7 +2,7 @@
 layout: post
 title:  "Metody poprawy wydajności silnika graficznego"
 date:   2020-03-22 23:12:50 +0100
-featured-img: ogl
+featured-img: ogl1
 ---
 Opis
 Celem pracy jest implementacja silnika graficznego wykorzystującego API graficzne OpenGL. W ramach pracy stopniowo dodawane będą różne metody poprawiające wydajność narzędzia. Praca będzie skupiać się na badaniu wpływu tych technik na ogólną sprawność silnika. W tym celu zostaną wyznaczone parametry, na podstawie których możliwa będzie ocena pracy narzędzia. Testy zostaną przeprowadzone na wielu scenach, z wykorzystaniem rozmaitych obiektów w taki sposób, aby przeanalizować różne aspekty pracy silnika.
