@@ -1,5 +1,6 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-remote-theme"
-gem "jekyll-sleek"
+source "https://rubygems.org"
+gemspec
+gem "bundler"
+gem "rake"

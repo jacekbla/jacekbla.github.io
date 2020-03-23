@@ -1,12 +1,10 @@
-# This is how Jekyll knows to use this theme.
-theme: jekyll-sleek
-
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'Strona główna', link: '/'}
   - {name: 'O mnie', link: '/about'}
   - {name: 'Kontakt', link: '/contact'}
 
+# SITE CONFIGURATION
 title: Portfolio
 author: Jacek Blady
 email: jacek.bldy@gmail.com
@@ -15,14 +13,20 @@ description: >
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 hero_img: wallpaper4.png
+#url: "https://jacekbla.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
+# SEO PLUGIN
+social:
+  name: Jacek Blady
+  links:
+    - https://www.facebook.com/jacek.blady.9
+    - https://www.linkedin.com/in/jacek-blady-47718a118/
+    - https://github.com/jacekbla
 
 # Header Links - all optional. If set these create header links.
 github_username: jacekbla
 linkedin_username: jacek-blady
 
-
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
- - jekyll-remote-theme # Lets us test remote themes locally.
+  - jekyll-sitemap
+  - jekyll-seo-tag
