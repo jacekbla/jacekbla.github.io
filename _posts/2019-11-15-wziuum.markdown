@@ -9,11 +9,11 @@ Projekt został zrealizowany w czteroosobowej grupie. Naszym zadaniem było wymy
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/mobile.jpg)
 
 Idea gry jest bardzo prosta, ale postaraliśmy się urozmaicić rozgrywkę dodają różne rodzaje ścian oraz umiejętność odbicia w locie. Niektóre prześcia pozostają zamknięte, dopóki nie zebrane zostaną odpowiednie przedmioty znajdujące się na mapie. 
-Na grę składa się 6 różnych poziomów, różnią się paletą kolorów oraz przede wszystkim machanikami gry. Na początku etapy są statyczne, gracz zostaje zaznajomiony z podstawowymi rodzajami ścian: zwykłe od których kwadrat odbija się, klejące - przy których gracz zatrzymuje się i może ponownie wystrzelić kwadrat oraz ściany niszczące, których należy unikać, kontakt z nimi oznacza powrót do początku poziomu. Później jednak stopniowo dodawane są poruszające się elementy oraz dodatkowe mechaniki.
+Na grę składa się 6 poziomów, różnią się paletą kolorów oraz machanikami gry. Na początku etapy są statyczne, gracz zostaje zaznajomiony z podstawowymi rodzajami ścian: zwykłe od których kwadrat odbija się, klejące - przy których gracz zatrzymuje się i może ponownie wystrzelić kwadrat oraz ściany niszczące, których należy unikać - kontakt z nimi oznacza powrót do początku poziomu. Później jednak stopniowo dodawane są poruszające się elementy oraz dodatkowe mechaniki.
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/rotate.gif)
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/mid_air.gif)
 
-Dwie osoby z naszej grupy zajmowały się tworzeniem grafik, zasobów gry oraz projektowaniem poziomów. Pozostała dwójka była odpowiedzialna za skrypty i implementacje mechanik gry. Byłem częścią drugiego zespołu.
+Dwie osoby z naszej grupy zajmowały się tworzeniem grafik, zasobów gry oraz projektowaniem poziomów. Pozostała dwójka była odpowiedzialna za skrypty i implementacje mechanik gry. Należałem do drugiego zespołu.
 
 W trakcie rozwoju aplikacji doszliśmy do wniosku, że dobrym pomysłem byłoby zbudowanie jej również na urządzenia mobilne. Niestety nie starczyło na to czasu w podstawowym czasie przeznaczonym na rozwój aplikacji. Mimo to po terminie udało mi się odpowienio zmodyfikować obsługę sterowania oraz zbudować aplikację na urządzenia Android.

@@ -4,26 +4,14 @@ title:  "Pixeluto"
 date:   2018-04-24 23:12:50 +0100
 featured-img: pixeluto
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Jedna z moich pierwszych gier wykonanych przy pomocy silnika Unity. Prosta gra platformowa 2D, na której testowałem różne narzędzia dostępne w programie. W czasie rozwoju aplikacji zapoznałem się z podstawami animacji, tworzenia interfejsu użytkownika czy obsługi dźwięku w silniku Unity.
 
-Jekyll requires blog post files to be named according to the following format:
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/pixeluto.jpg)
 
-`YEAR-MONTH-DAY-title.MARKUP`
+Bohater gry może skakać, szcekać oraz wystrzelić kiełbasę, która skutecznie radzi sobie ze złymi kotami uniemożliwiającymi przejście przez segmenty gry. Na każdym z poziomów zostały rozmieszczone dodatkowe obiekty, które gracz może zbierać, otrzymując punkty. Etap kończy się po dotarciu do złotej kiełbasy.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Gra została zmodyfikowana, aby wspierać urządzenia mobilne z systemem Android. Ta wersja dodała przyciski sterujące umożliwiające nawigację za pomocą ekranu dotykowego.
 
-Jekyll also offers powerful support for code snippets:
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/mobile.jpg)
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[GitHub](https://github.com/jacekbla/Unity4_pixeluto)
