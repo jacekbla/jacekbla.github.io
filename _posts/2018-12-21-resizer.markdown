@@ -35,7 +35,7 @@ Przebadany został również wpływ zastosowania techniki *Forward-Energy*, któ
 
 ## Narzędzia
 
-AlgorytmSeam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka C++, jego bibliotek standardowych oraz biblioteki OpenCV. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku Java z wykorzystaniem biblioteki JavaFX. Oba komponenty zostały połączone przy użyciu JNI - natywnego interfejsu Javy.
+Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka C++, jego bibliotek standardowych oraz biblioteki OpenCV. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku Java z wykorzystaniem biblioteki JavaFX. Oba komponenty zostały połączone przy użyciu JNI - natywnego interfejsu Javy.
 
 ## Testy
 
