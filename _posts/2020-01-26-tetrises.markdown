@@ -13,7 +13,7 @@ Mniej złożona projekt, aplikacja składa się tylko z jednego ekranu. Ustawien
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/python.jpg)
 
-BitBucket: https://bitbucket.org/jacekbla/python_tetris
+[BitBucket](https://bitbucket.org/jacekbla/python_tetris)
 
 ## C#
 Aplikacja bardzo podobna do Python'owego odpowiednika, ale poszerzona o kilka dodatkowych funkcjonalności. Przede wszystkim zawiera menu główne i dostęp do kilku różnych ekranów. Wśród nich uzytkownik może zmienić opcje gry oraz sprawdzić najlepsze wyniki. 
@@ -32,4 +32,4 @@ Sama gra również zawiera kilka pomocniczych funkcji:
 
 W ramach zajęć należało połączyć aplikację z bazą danych, dlatego wyniki gier zapisywane są w bardzo prostej bazie.
 
-BitBucket: https://bitbucket.org/jacekbla/tetris
+[BitBucket](https://bitbucket.org/jacekbla/tetris)
