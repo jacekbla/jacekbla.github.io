@@ -17,7 +17,7 @@ layout: compress
 
     {% endif %}
 
-    {% include header.html %}
+    {% include header_english.html %}
 
     <div class="hero lazyload" data-bg="{{ site.url }}{{ site.baseurl }}/assets/img/{{ site.hero_img }}">
       <div class="hero__wrap">
@@ -33,9 +33,7 @@ layout: compress
 
             {% for post in site.posts %}
               {% if post.categories contains "eng" %}
-
-               {% else %}
-                 {% include card.html %}
+                {% include card.html %}
               {% endif %}
             {% endfor %}
 

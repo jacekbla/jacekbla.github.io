@@ -1,0 +1,28 @@
+---
+layout: post_english
+title:  "e Zespołowe przedsięwzięcie inżynierskie"
+date:   2018-06-14 23:12:50 +0100
+featured-img: zpi
+categories: [eng]
+---
+Projekt realizowany w grupie czteroosobowej. W ramach kursu Zespołowe Przedsięwzięcie inżynierskie naszym zadaniem było zaprojektowanie i implementacja aplikacji webowej do formowania i pracy z grupami realizującymi inne projekty w zakresie tych zajęć. 
+Aplikacja podzielona została na dwie części frontend, wykorzystujący głównie framework *Angular* oraz backend, napisany w *Javie*, oparty o narzędzie *Spring Boot*. Program przechowywał dane w zdalnej bazie danych **MySQL**. Moim zadaniem było sporządzenie projektu bazy, implementacja, wdrożenie oraz skomunikowanie jej z backendem.
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/zpi/scheme.jpg)
+
+Od strony użytkownika aplikacja składała się z dwóch części: 
+- Strona studenta 
+    - Pozwala wyszukać istniejące grupy, które poszukują członków zespołu.
+    - Umożliwia przejście do zakładki ilustrującej aktualną grupę studenta. Wyświetlone zostają informacje o grupie (członkowie, temat, technologie), zgłoszenia innych członków oraz możliwość opuszczenia grupy.
+    - Zawiera zakładkę osobistego profilu, przedstawiającego listę własnych zgłoszeń do innych grup. Zawarte są tam również rozmaite informacje o studencie, oprócz tego możliwe jest przejście do widoku, które ukazuje listę preferowanych przez nas technologii, które można zmienić - wpływają one na proponowane użytkownikowi grupy.
+
+
+    ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/zpi/student.jpg)
+
+- Strona prowadzącego
+    - Zawiera listę wszystkich grup w bazie danych wraz z informacjami o temacie, prowadzących, członkach oraz technologiach.
+    - Wyświetla wszystkie grupy prowadzącego wraz z informacjami o nich oraz umożliwia ich modyfikację. Dostępna jest również opcja dodania nowej grupy.
+    - Zawiera zakładkę osobistego profilu, gdzie prowadzący może znaleźć i modyfikować własne informacje oraz ma podgląd na wszystkich studentów, których projekty prowadzi.
+
+
+    ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/zpi/leader.jpg)

@@ -1,0 +1,18 @@
+---
+layout: post_english
+title:  "Pixeluto e"
+date:   2018-04-24 23:12:50 +0100
+featured-img: pixeluto
+categories: [eng]
+---
+Jedna z moich pierwszych gier wykonanych przy pomocy silnika Unity. Prosta gra platformowa 2D, na której testowałem różne narzędzia dostępne w programie. W czasie rozwoju aplikacji zapoznałem się z podstawami animacji, tworzenia interfejsu użytkownika czy obsługi dźwięku w silniku Unity.
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/pixeluto.jpg)
+
+Bohater gry może skakać, szcekać oraz wystrzelić kiełbasę, która skutecznie radzi sobie ze złymi kotami uniemożliwiającymi przejście przez segmenty gry. Na każdym z poziomów zostały rozmieszczone dodatkowe obiekty, które gracz może zbierać, otrzymując punkty. Etap kończy się po dotarciu do złotej kiełbasy.
+
+Gra została zmodyfikowana, aby wspierać urządzenia mobilne z systemem Android. Ta wersja dodała przyciski sterujące umożliwiające nawigację za pomocą ekranu dotykowego.
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/mobile.jpg)
+
+[GitHub](https://github.com/jacekbla/Unity4_pixeluto)

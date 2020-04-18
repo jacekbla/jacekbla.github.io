@@ -1,26 +1,26 @@
 <header class="header" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
   <div class="container">
     <div class="header__inner">
-      <a class="header__logo" href="{{ '/' | relative_url }}">
+      <a class="header__logo" href="{{ '/eng/' | relative_url }}">
         <div class="header__logo--container">
           {% include logo.svg %}
         </div>
       </a>
       <nav class="header__links">
         <div class="container header__links-wrapper">
-          {% assign item1 = site.navigation[0] %}
+          {% assign item1 = site.navigation[4] %}
           <a class="header__link" href="{{ item1.link | relative_url }}" itemprop="url">
             <span itemprop="name">{{ item1.name }}</span>
           </a>
-          {% assign item2 = site.navigation[1] %}
+          {% assign item2 = site.navigation[5] %}
           <a class="header__link" href="{{ item2.link | relative_url }}" itemprop="url">
             <span itemprop="name">{{ item2.name }}</span>
           </a>
-          {% assign item3 = site.navigation[2] %}
+          {% assign item3 = site.navigation[6] %}
           <a class="header__link" href="{{ item3.link | relative_url }}" itemprop="url">
             <span itemprop="name">{{ item3.name }}</span>
           </a>
-          {% assign item4 = site.navigation[3] %}
+          {% assign item4 = site.navigation[7] %}
           <a class="header__link" href="{{ item4.link | relative_url }}" itemprop="url">
             <span itemprop="name">{{ item4.name }}</span>
           </a>

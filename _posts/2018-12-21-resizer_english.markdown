@@ -1,0 +1,66 @@
+---
+layout: post_english
+title:  "Resizer e"
+date:   2018-12-21 23:12:50 +0100
+featured-img: suru
+categories: [eng]
+---
+## Opis projektu
+
+Projekt miał na celu implementację programu wykorzystującego techniki zmiany wielkości obrazu z uwzględnieniem jego zawartości oraz analizę problemu z wykorzystaniem utworzonej aplikacji. Na początku sporządzony został projekt aplikacji autorskiej, zawierający między innymi wymagania funkcjonalne i niefunkcjonalne, diagramy UML oraz porównanie do aplikacji dostępnych na rynku. Oprogramowanie ma pozwolić na zmianę rozmiaru obrazu z uwzględnieniem jego zawartości oraz zaprezentować niektóre funkcje dostępne dzięki wykorzystaniu tych technik. Zdefiniowane zostały również standardowe opcje skalowania i przycinania grafiki, aby możliwe było porównanie różnych technik. 
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/gui.jpg)
+
+W dzisiejszych czasach ludzie mają do czynienia z wieloma rozmaitymi urządzeniami o różnych przekątnych ekranu, które za pomocą rozlicznych aplikacji wyświetlają wszelakie obrazy. 
+Oczekuje się, że zdjęcie lub strona internetowa wyświetlana na komputerze stacjonarnym będzie przekazywała te same informacje na telefonie. Często jednak obiekty, które są dostrzegane bez problemu na większym ekranie, mogą być problematyczne w dokładnym odbiorze na innym urządzeniu. Przy standardowej zmianie rozmiaru jednego wymiaru obraz może zostać zaburzony, jego proporcje zmienione, ważny obiekt przeoczony, a nieważny element pozostawione. Patrząc na niejedno zdjęcia można zauważyć dużo niezagospodarowanej przestrzeni, która nie wnosi wiele wartościowych informacji do obrazu.
+Niniejsza praca zajmuję się właśnie takim problemem - wykorzystaniem niepotrzebnej przestrzeni na rzecz obiektów ważnych bez uszczerbku na całokształcie obrazu.
+
+## Algorytmy
+
+Algorytm, wykorzystany do realizacji mechanizmu zmiany wielkości obrazu z uwzględnieniem jego zawartości to *Seam-Carving*. Został opracowany przez Shai Avidana z Mitsubishi Electric Research Laboratories oraz Ariela Shamira z Centrum Interdyscyplinarnego w Herzliya i Mitsubishi Electric Research Laboratories.
+Metoda ustala wagę każdego piksela obrazu i na jej podstawie odnajduje szwy (ścieżki pikseli o najmniejszej energii), które następnie zostają usuwane lub wstawiane, w zależności czy plik ma zostać pomniejszony czy powiększony. 
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/comparasion.jpg)
+
+Algorytm umożliwia również implementację kilku ciekawych funkcjonalności, takich jak:
+
+- wzmocnienie obiektu 
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/amplify.jpg)
+
+- usuwanie obiektu z obrazu
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/delete.jpg)
+
+Przebadany został również wpływ zastosowania techniki *Forward-Energy*, który okazał się bardzo korzystny dla modyfikowanego obrazu - zmniejszał on intensywność lub całkowicie pozbywał się artefaktów, które mają tendencje do pojawiania się przy większych wartościach zmiany rozmiaru obrazu.
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/forward_energy.jpg)
+
+
+## Narzędzia
+
+Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka C++, jego bibliotek standardowych oraz biblioteki OpenCV. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku Java z wykorzystaniem biblioteki JavaFX. Oba komponenty zostały połączone przy użyciu JNI - natywnego interfejsu Javy.
+
+## Testy
+
+Cała aplikacja została pokryta testami jednostkowymi. Ich zadaniem było sprawdzenie poprawności wykonywanych działań przez pojedyncze metody lub mechanizmy spełniające dane funkcjonalności. Badania weryfikowały różne możliwe ́scieżki przechodzenia po programie, wartości brzegowe oraz zgodność zwracanych wyników. Na potrzeby niektórych testów kod programu musiał zostać odpowiednio zmodyfikowany. Testy zostały napisane przy użyciu następujących narzędzi:
+
+- JUnit 4.12
+- TestFX 4.0.15
+- Google Test
+
+## Analiza
+
+Analiza mechanizmu zmiany obrazu z uwzględnieniem jego zawartości ma na celu zbadanie czy w ogóle warto go stosować, pokazanie korzyści płynących z tego podejścia oraz jego problemów i ograniczeń. Do oceny wyników zostały wykorzystane tzw. punkty kluczowe.
+W pracy do wykrycia punktów kluczowych został wykorzystany detektor Harris-Affine, a do opisu - deskryptor SIFT. Do wyznaczania tego typu punktów kluczowych za pomocą gotowego narzędzia.
+
+Zaimplementowane zostało oprogramowanie pomocnicze, przyjmujące pliki .haraff.sift i analizujące podobieństwo dwóch obrazów. Program posiada następujące funkcjonalności:
+
+- Wyznaczanie sąsiedztwa punktu kluczowego - dla każdego punktu kluczowego jednego obrazu wyszukiwany jest punkt kluczowy drugiego obrazu, którego cechy są najbardziej zbliżone. Taką parę punktów określa się mianem sąsiadów.
+    
+- Wyznaczanie par punktów kluczowych - para punktów kluczowych to dwa punkty, których cechą charakterystyczną jest wzajemne sąsiedztwo, tzn. najbliższym sąsiadem punktu A jest punkt B oraz najbliższym sąsiadem punktu B jest punkt A. 
+
+- Wizualizacja par punktów kluczowych - program wyświetla oba obrazy z pomocą biblioteki *OpenCV* i rysuje linie łączące pary punktów kluczowych.
+    
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/key_points.jpg)
+    
+- Wyznaczanie średniej różnicy cech obrazów - dla każdej pary punktów kluczowych dwóch obrazów obliczana jest wartość bezwzględna z różnicy wartości każdej z cech. Wszystkie te różnice są sumowane, a następnie ta suma dzielona jest przez liczbę par punktów kluczowych. Otrzymana w ten sposób wartość uwzględnia liczbę par punktów kluczowych oraz ich jakość, definiowaną przy pomocy wektora cech. Wartość wskaźnika dla dwóch identycznych obrazów wynosi 0.
+
+Oprogramowanie zostało zaimplementowane w języku C++, z użyciem środowiska *Visual Studio*. Wykorzystuje biblioteki standardowe oraz biblioteki *Boost* i *OpenCV*.

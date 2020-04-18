@@ -17,7 +17,7 @@ layout: compress
 
 {% endif %}
 
-{% include header.html %}
+{% include header_english.html %}
 
   {% if page.featured-img %}
   <div class="hero lazyload" data-bg="{{ site.url }}{{ site.baseurl }}/assets/img/posts/{{ page.featured-img }}.jpg">
@@ -64,7 +64,7 @@ layout: compress
       </article>
       <div class="post-content controls__inner">
         <div class="controls__item prev">
-          {% if page.previous.url %}
+          {% if page.previous.previous.url %}
 
           <span>Previous</span>
           <a href="{{page.previous.previous.url | relative_url }}">
