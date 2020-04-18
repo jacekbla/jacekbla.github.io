@@ -8,7 +8,7 @@ featured-img: elefun
 
 Celem pracy było utworzenie sceny 3D, wykorzystującej oprogramowanie OpenGL do realistycznego odwzorowania wody z użyciem zaawansowanych efektów graficznych. Aby prawidłowo zrealizować zadanie konieczna była implementacja technik imitujących zjawiska fizycznye, które opisują zachowanie się wody - między innymi efekt Fresnela, odbicie oraz załamanie wody.
 
-![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/moving_vert.gif)
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/dudv.gif)
 
 
 ## Wynik prac
@@ -24,12 +24,12 @@ Większość efektów osiągnięta poprzez jednostki cieniujące, wśród nich m
 - Efekt mętnej wody - utworzona została mapa głębokości zbiornika wody. Na jej podstawie dodany kolor niebieski jest coraz bardziej intensywny w niżej położonych obszarach. Nadaje to efekt mętności, w głębinach nie jesteśmy w stanie dostrzec odbicia i refrakcji.
 - Zanikające krawędzi - za pomocą manipulacji składowej alfa koloru wody, staje się ona coraz mnie widoczna przy brzegach zbiornika.
 - Mapy dudv - w celu wprawienia wody w ruch zastosowane zostały dwie metody. Jedna z nich to mapy dudv. Z wczytanych tekstur pobierane są wartości nasycenia kolorów zielonego i czerwonego, na podstawie których nakładane na wodę zostają zniekształcenia. Tekstura przesuwana jest po tafli wody w czasie, dzięki czemu woda zdaje się być w ruchu.
+- Poruszanie wierzchołków - drugą metodą wprawienia tafli wody w ruch jest manipulacja jej siatką wierzchołków.
 
-![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/dudv.gif)
-
-- Poruszanie wierzchołków - drugą metodą wprawienia tafli wody w ruch jest manipulacja jej wierzchołkami.
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/moving_vert.gif)
 
 GitHub:
 [Ruchomy mesh](https://github.com/jacekbla/opengl_water_moving_mesh)
+
 [Mapy dudv](https://github.com/jacekbla/opengl_water_dudv)
 
