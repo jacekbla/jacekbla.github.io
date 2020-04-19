@@ -31,4 +31,6 @@ Zastosowane zostały 3 heurystyki do oceny stanu gry:
 #### Heurystyki wyboru kolejności węzłów
 Zaimplementowane zostały 2 heurystyki wyboru kolejności węzłów:
 - standardowa – węzły wybierane są po kolei
-- losowa – węzły wybierane są w kolejności losowej
+- losowa – węzły wybierane są w kolejności losowej  
+
+[GitHub](https://github.com/jacekbla/si3)

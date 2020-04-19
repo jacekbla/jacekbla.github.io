@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Metody poprawy wydajności silnika graficznego"
-date:   2020-03-22 23:12:50 +0100
+date:   2020-04-19 00:12:50 +0100
 featured-img: ogl1
 ---
 ## Cel projektu
@@ -35,4 +35,7 @@ Silnik posiada mechanizmy umożliwiające wyświetlenie podstawowej sceny:
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/point_light.jpg)
 
 - Skybox - jako tło sceny zaimplementowano skoybox oparty na sześcianie.
-- Mgła - w zależności od odległości obiekty na scenie są coraz mniej widoczne.
+- Mgła - w zależności od odległości obiekty na scenie są coraz mniej widoczne.  
+
+[BitBucket](https://bitbucket.org/jacekbla/opengl1)
+

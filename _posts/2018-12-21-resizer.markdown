@@ -57,4 +57,7 @@ Zaimplementowane zostało oprogramowanie pomocnicze, przyjmujące pliki .haraff.
     
 - Wyznaczanie średniej różnicy cech obrazów - dla każdej pary punktów kluczowych dwóch obrazów obliczana jest wartość bezwzględna z różnicy wartości każdej z cech. Wszystkie te różnice są sumowane, a następnie ta suma dzielona jest przez liczbę par punktów kluczowych. Otrzymana w ten sposób wartość uwzględnia liczbę par punktów kluczowych oraz ich jakość, definiowaną przy pomocy wektora cech. Wartość wskaźnika dla dwóch identycznych obrazów wynosi 0.
 
-Oprogramowanie zostało zaimplementowane w języku C++, z użyciem środowiska *Visual Studio*. Wykorzystuje biblioteki standardowe oraz biblioteki *Boost* i *OpenCV*.
+Oprogramowanie zostało zaimplementowane w języku C++, z użyciem środowiska *Visual Studio*. Wykorzystuje biblioteki standardowe oraz biblioteki *Boost* i *OpenCV*.  
+
+[BitBucket](https://bitbucket.org/jacekbla/resizer)
+

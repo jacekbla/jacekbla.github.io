@@ -1,7 +1,7 @@
 ---
 layout: post_english
 title:  "Methods for graphics engine performance improvement"
-date:   2020-03-22 23:12:50 +0100
+date:   2020-04-19 00:12:50 +0100
 featured-img: ogl1
 categories: [eng]
 ---
@@ -30,11 +30,14 @@ The engine has mechanisms to display the basic scene:
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/multitextures.jpg)
 
-- Water - water implementation using various techniques ([more informations here](https://jacekbla.github.io/2020/01/29/opengl_water.html))
+- Water - water implementation using various techniques ([more informations here](https://jacekbla.github.io/eng/2020/01/29/opengl_water_english.html))
 
 - Many light sources, including spotlights.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/point_light.jpg)
 
 - Skybox - a cube-based skoybox has been implemented as the background of the stage.
-- Fog - depending on the distance, objects on the stage are becoming less visible.
+- Fog - depending on the distance, objects on the stage are becoming less visible.  
+
+[BitBucket](https://bitbucket.org/jacekbla/opengl1)
+

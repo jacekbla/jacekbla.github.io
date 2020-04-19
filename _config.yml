@@ -28,10 +28,12 @@ social:
     - https://www.facebook.com/jacek.blady.9
     - https://www.linkedin.com/in/jacek-blady-47718a118/
     - https://github.com/jacekbla
+    - https://bitbucket.org/jacekbla
 
 # Header Links - all optional. If set these create header links.
 github_username: jacekbla
 linkedin_username: jacek-blady
+bitbucket_username: jacekbla
 
 plugins:
   - jekyll-sitemap

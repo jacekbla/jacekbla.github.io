@@ -58,4 +58,7 @@ Support software has been implemented that accepts .haraff.sift files and analyz
     
 - Determination of the average difference of image features - for each pair of key points of two images, the absolute value is calculated from the difference in the value of each of the features. All these differences are added together, and then this sum is divided by the number of pairs of key points. The value obtained in this way takes into account the number of pairs of key points and their quality, defined using the feature vector. The indicator value for two identical images is 0.
 
-The software has been implemented in C++ using the *Visual Studio* environment. Uses standard libraries as well as *Boost* and *OpenCV* libraries.
+The software has been implemented in C++ using the *Visual Studio* environment. Uses standard libraries as well as *Boost* and *OpenCV* libraries.  
+
+[BitBucket](https://bitbucket.org/jacekbla/resizer)
+

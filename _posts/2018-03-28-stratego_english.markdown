@@ -33,4 +33,6 @@ Three heuristics were used to assess the game status:
 #### Heuristics of node order selection
 Two heuristics of node order selection have been implemented:
 - standard - the nodes are selected one after the other
-- random - the nodes are selected in random order
+- random - the nodes are selected in random order  
+
+[GitHub](https://github.com/jacekbla/si3)
