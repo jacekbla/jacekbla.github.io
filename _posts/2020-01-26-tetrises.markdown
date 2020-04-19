@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tetris"
+title:  "Tetrisy"
 date:   2020-01-26 23:12:50 +0100
 featured-img: tetris
 ---
@@ -21,11 +21,8 @@ Aplikacja bardzo podobna do Python'owego odpowiednika, ale poszerzona o kilka do
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/menu.jpg)
 
 Sama gra również zawiera kilka pomocniczych funkcji: 
-
 - Hold - swojego rodzaju schowek, umożliwia zamianę bieżącego klocka na ten obecnie znajdujący się w schowku.
-
 - Ghost tetromino - wyświetlona dolna pozycja bieżącego klocka
-
 - Okno statystyk - po skończonej rozgrywce gra prezentuje statystyki i umożliwia ich zapis
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/stats.jpg)

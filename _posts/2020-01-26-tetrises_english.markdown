@@ -1,36 +1,33 @@
 ---
 layout: post_english
-title:  "Tetris e"
+title:  "Tetrises"
 date:   2020-01-26 23:12:50 +0100
 featured-img: tetris
 categories: [eng]
 ---
 ## Sprint
-W czasie studiów wiele projektów miało na celu zaznajomienie studentów z nowymi technologiami. W ramach dwóch takich kursów zdecydowałem się na implementację gry Tetris. Jedna z nich opiera się o środowisko *.NET* - *C#* i *WPF*, druga bazowała na języku *Python* i *PyGame*.
-Obie aplikacje zajmują się wariantem **Sprint** Tetrisa. Ten tryb polega na jak najszybszym wyczyszczeniu pewnej liczby linii. Najbardziej popularny jest Sprint 40L, który w zasadzie polega na jak najszybszym zrzuceniu 100-103 klocków (potrzebnych na ułożenie 40 linii).
+During studies, many projects aimed to familiarize students with new technologies. As part of two such courses, I decided to implement the Tetris game. One of them is based on the *.NET* - *C#* and *WPF* environment, the other is based on *Python* and *PyGame*.
+Both applications deal with the **Sprint** Tetris variant. This mode is to clear a certain number of lines as soon as possible. The most popular is Sprint 40L, which basically consists in dropping 100-103 blocks as quickly as possible (needed to lay 40 lines).
 
 ## Python
-Mniej złożona projekt, aplikacja składa się tylko z jednego ekranu. Ustawienia mogą być dostosowane tylko poprzez stałe w kodzie. Gra pozwala na podstawowe ruchy, takie jak przesuwanie i obrót klocka w obie strony czy natychmiastowe opuszczenie klocka. Interfejs informuje użytkownika o liczbie ułożonych linii oraz czasie gry.
+Less complex design, the application consists of only one screen. Settings can only be adjusted via fixed code. The game allows basic moves, such as moving and rotating the block in both directions or immediately lowering the block. The interface informs the user about the number of lines laid and the time of the game.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/python.jpg)
 
 [BitBucket](https://bitbucket.org/jacekbla/python_tetris)
 
 ## C#
-Aplikacja bardzo podobna do Python'owego odpowiednika, ale poszerzona o kilka dodatkowych funkcjonalności. Przede wszystkim zawiera menu główne i dostęp do kilku różnych ekranów. Wśród nich uzytkownik może zmienić opcje gry oraz sprawdzić najlepsze wyniki. 
+An application very similar to the Python equivalent, but extended with several additional functionalities. First of all, it contains the main menu and access to several different screens. Among them, the user can change game options and check the best results.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/menu.jpg)
 
-Sama gra również zawiera kilka pomocniczych funkcji: 
-
-- Hold - swojego rodzaju schowek, umożliwia zamianę bieżącego klocka na ten obecnie znajdujący się w schowku.
-
-- Ghost tetromino - wyświetlona dolna pozycja bieżącego klocka
-
-- Okno statystyk - po skończonej rozgrywce gra prezentuje statystyki i umożliwia ich zapis
+The game itself also includes several auxiliary functions:
+- Hold - a kind of storage, allows you to replace the current block with the one currently in the storage box.
+- Ghost tetromino - the bottom position of the current block is displayed
+- Statistics window - after the game is over the game presents statistics and allows you to save them
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/stats.jpg)
 
-W ramach zajęć należało połączyć aplikację z bazą danych, dlatego wyniki gier zapisywane są w bardzo prostej bazie.
+As part of the classes you had to connect the application with a database, so the results of games are saved in a very simple database.
 
 [BitBucket](https://bitbucket.org/jacekbla/tetris)

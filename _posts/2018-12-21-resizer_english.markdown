@@ -1,66 +1,61 @@
 ---
 layout: post_english
-title:  "Resizer e"
+title:  "Resizer"
 date:   2018-12-21 23:12:50 +0100
 featured-img: suru
 categories: [eng]
 ---
-## Opis projektu
-
-Projekt miał na celu implementację programu wykorzystującego techniki zmiany wielkości obrazu z uwzględnieniem jego zawartości oraz analizę problemu z wykorzystaniem utworzonej aplikacji. Na początku sporządzony został projekt aplikacji autorskiej, zawierający między innymi wymagania funkcjonalne i niefunkcjonalne, diagramy UML oraz porównanie do aplikacji dostępnych na rynku. Oprogramowanie ma pozwolić na zmianę rozmiaru obrazu z uwzględnieniem jego zawartości oraz zaprezentować niektóre funkcje dostępne dzięki wykorzystaniu tych technik. Zdefiniowane zostały również standardowe opcje skalowania i przycinania grafiki, aby możliwe było porównanie różnych technik. 
+## Project description
+The project was aimed at implementing a program using techniques for changing the size of the image, taking into account its content, and analyzing the problem using the created application. At the beginning, a proprietary application design was prepared, containing functional and non-functional requirements, UML diagrams and comparison with applications available on the market. The software will allow you to change the size of the image taking into account its content and present some of the functions available through the use of these techniques. Standard options for scaling and cropping graphics have also been defined so that different techniques can be compared.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/gui.jpg)
 
-W dzisiejszych czasach ludzie mają do czynienia z wieloma rozmaitymi urządzeniami o różnych przekątnych ekranu, które za pomocą rozlicznych aplikacji wyświetlają wszelakie obrazy. 
-Oczekuje się, że zdjęcie lub strona internetowa wyświetlana na komputerze stacjonarnym będzie przekazywała te same informacje na telefonie. Często jednak obiekty, które są dostrzegane bez problemu na większym ekranie, mogą być problematyczne w dokładnym odbiorze na innym urządzeniu. Przy standardowej zmianie rozmiaru jednego wymiaru obraz może zostać zaburzony, jego proporcje zmienione, ważny obiekt przeoczony, a nieważny element pozostawione. Patrząc na niejedno zdjęcia można zauważyć dużo niezagospodarowanej przestrzeni, która nie wnosi wiele wartościowych informacji do obrazu.
-Niniejsza praca zajmuję się właśnie takim problemem - wykorzystaniem niepotrzebnej przestrzeni na rzecz obiektów ważnych bez uszczerbku na całokształcie obrazu.
+Nowadays, people are dealing with a wide variety of devices with different screen diagonals, which display various images using various applications.
+It is expected that the photo or website displayed on your desktop computer will transmit the same information on your phone. Often, however, objects that are spotted without problems on a larger screen can be problematic when accurately perceived on another device. With a standard resizing of one dimension, the image may be disturbed, its proportions changed, an important object overlooked, and an invalid element left. Looking at many photos, you can notice a lot of undeveloped space that does not bring much valuable information to the image.
+This work deals with such a problem - the use of unnecessary space for important objects without compromising the overall picture.
 
-## Algorytmy
-
-Algorytm, wykorzystany do realizacji mechanizmu zmiany wielkości obrazu z uwzględnieniem jego zawartości to *Seam-Carving*. Został opracowany przez Shai Avidana z Mitsubishi Electric Research Laboratories oraz Ariela Shamira z Centrum Interdyscyplinarnego w Herzliya i Mitsubishi Electric Research Laboratories.
-Metoda ustala wagę każdego piksela obrazu i na jej podstawie odnajduje szwy (ścieżki pikseli o najmniejszej energii), które następnie zostają usuwane lub wstawiane, w zależności czy plik ma zostać pomniejszony czy powiększony. 
+## Algorithms
+The algorithm used to implement the mechanism of changing the size of the image including its content is *Seam-Carving*. It was developed by Shai Avidan from Mitsubishi Electric Research Laboratories and Ariel Shamir from the Interdisciplinary Center at Herzliya and Mitsubishi Electric Research Laboratories.
+The method determines the weight of each pixel of the image and based on it finds seams (pixel paths with the lowest energy), which are then removed or inserted, depending on whether the file is to be reduced or enlarged.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/comparasion.jpg)
 
-Algorytm umożliwia również implementację kilku ciekawych funkcjonalności, takich jak:
+The algorithm also allows the implementation of several interesting functionalities, such as:
 
-- wzmocnienie obiektu 
+- object amplification
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/amplify.jpg)
 
-- usuwanie obiektu z obrazu
+- object deletion
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/delete.jpg)
 
-Przebadany został również wpływ zastosowania techniki *Forward-Energy*, który okazał się bardzo korzystny dla modyfikowanego obrazu - zmniejszał on intensywność lub całkowicie pozbywał się artefaktów, które mają tendencje do pojawiania się przy większych wartościach zmiany rozmiaru obrazu.
+The effect of the *Forward-Energy* technique was also studied, which turned out to be very beneficial for the modified image - it reduced the intensity or completely got rid of artifacts that tend to appear at larger values ​​of image size change.
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/forward_energy.jpg)
 
 
-## Narzędzia
+## Tools
+The Seam-Carving algorithm and most of the program's functionalities have been implemented using the C++ language, its standard libraries and the OpenCV library. Everything was contained in the dynamic DLL library. The graphical interface using these functionalities was written in Java using the JavaFX library. Both components have been combined using JNI - the native Java interface.
 
-Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka C++, jego bibliotek standardowych oraz biblioteki OpenCV. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku Java z wykorzystaniem biblioteki JavaFX. Oba komponenty zostały połączone przy użyciu JNI - natywnego interfejsu Javy.
-
-## Testy
-
-Cała aplikacja została pokryta testami jednostkowymi. Ich zadaniem było sprawdzenie poprawności wykonywanych działań przez pojedyncze metody lub mechanizmy spełniające dane funkcjonalności. Badania weryfikowały różne możliwe ́scieżki przechodzenia po programie, wartości brzegowe oraz zgodność zwracanych wyników. Na potrzeby niektórych testów kod programu musiał zostać odpowiednio zmodyfikowany. Testy zostały napisane przy użyciu następujących narzędzi:
+## Tests
+The entire application has been covered with unit tests. Their task was to check the correctness of actions performed by individual methods or mechanisms that meet the given functionality. The tests verified various possible paths through the program, boundary values ​​and compliance of returned results. For some tests, the program code had to be modified accordingly. The tests were written using the following tools:
 
 - JUnit 4.12
 - TestFX 4.0.15
 - Google Test
 
-## Analiza
+## Analysis
+The analysis of the image change mechanism, taking into account its content, aims to examine whether it is worth using it at all, to show the benefits of this approach as well as its problems and limitations. To evaluate the results, so-called key points.
+In the work, the Harris-Affine detector was used to detect key points, and the SIFT descriptor was used to describe it. For determining this type of key points using a ready-made tool.
 
-Analiza mechanizmu zmiany obrazu z uwzględnieniem jego zawartości ma na celu zbadanie czy w ogóle warto go stosować, pokazanie korzyści płynących z tego podejścia oraz jego problemów i ograniczeń. Do oceny wyników zostały wykorzystane tzw. punkty kluczowe.
-W pracy do wykrycia punktów kluczowych został wykorzystany detektor Harris-Affine, a do opisu - deskryptor SIFT. Do wyznaczania tego typu punktów kluczowych za pomocą gotowego narzędzia.
+Support software has been implemented that accepts .haraff.sift files and analyzes the similarity of two images. The program has the following functionalities:
 
-Zaimplementowane zostało oprogramowanie pomocnicze, przyjmujące pliki .haraff.sift i analizujące podobieństwo dwóch obrazów. Program posiada następujące funkcjonalności:
-
-- Wyznaczanie sąsiedztwa punktu kluczowego - dla każdego punktu kluczowego jednego obrazu wyszukiwany jest punkt kluczowy drugiego obrazu, którego cechy są najbardziej zbliżone. Taką parę punktów określa się mianem sąsiadów.
+- Determination of key point neighborhood - for each key point of one image, the key point of the other image whose characteristics are most similar is searched for. Such a few points are called neighbors.
     
-- Wyznaczanie par punktów kluczowych - para punktów kluczowych to dwa punkty, których cechą charakterystyczną jest wzajemne sąsiedztwo, tzn. najbliższym sąsiadem punktu A jest punkt B oraz najbliższym sąsiadem punktu B jest punkt A. 
+- Determination of key point pairs - a pair of key points are two points whose characteristic feature is mutual proximity, i.e. the nearest neighbor of point A is point B and the nearest neighbor of point B is point A.
 
-- Wizualizacja par punktów kluczowych - program wyświetla oba obrazy z pomocą biblioteki *OpenCV* i rysuje linie łączące pary punktów kluczowych.
+- Visualization of key point pairs - the program displays both images with the help of the *OpenCV* library and draws lines connecting pairs of key points.
     
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/key_points.jpg)
     
-- Wyznaczanie średniej różnicy cech obrazów - dla każdej pary punktów kluczowych dwóch obrazów obliczana jest wartość bezwzględna z różnicy wartości każdej z cech. Wszystkie te różnice są sumowane, a następnie ta suma dzielona jest przez liczbę par punktów kluczowych. Otrzymana w ten sposób wartość uwzględnia liczbę par punktów kluczowych oraz ich jakość, definiowaną przy pomocy wektora cech. Wartość wskaźnika dla dwóch identycznych obrazów wynosi 0.
+- Determination of the average difference of image features - for each pair of key points of two images, the absolute value is calculated from the difference in the value of each of the features. All these differences are added together, and then this sum is divided by the number of pairs of key points. The value obtained in this way takes into account the number of pairs of key points and their quality, defined using the feature vector. The indicator value for two identical images is 0.
 
-Oprogramowanie zostało zaimplementowane w języku C++, z użyciem środowiska *Visual Studio*. Wykorzystuje biblioteki standardowe oraz biblioteki *Boost* i *OpenCV*.
+The software has been implemented in C++ using the *Visual Studio* environment. Uses standard libraries as well as *Boost* and *OpenCV* libraries.

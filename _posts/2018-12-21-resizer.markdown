@@ -5,7 +5,6 @@ date:   2018-12-21 23:12:50 +0100
 featured-img: suru
 ---
 ## Opis projektu
-
 Projekt miał na celu implementację programu wykorzystującego techniki zmiany wielkości obrazu z uwzględnieniem jego zawartości oraz analizę problemu z wykorzystaniem utworzonej aplikacji. Na początku sporządzony został projekt aplikacji autorskiej, zawierający między innymi wymagania funkcjonalne i niefunkcjonalne, diagramy UML oraz porównanie do aplikacji dostępnych na rynku. Oprogramowanie ma pozwolić na zmianę rozmiaru obrazu z uwzględnieniem jego zawartości oraz zaprezentować niektóre funkcje dostępne dzięki wykorzystaniu tych technik. Zdefiniowane zostały również standardowe opcje skalowania i przycinania grafiki, aby możliwe było porównanie różnych technik. 
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/gui.jpg)
@@ -15,7 +14,6 @@ Oczekuje się, że zdjęcie lub strona internetowa wyświetlana na komputerze st
 Niniejsza praca zajmuję się właśnie takim problemem - wykorzystaniem niepotrzebnej przestrzeni na rzecz obiektów ważnych bez uszczerbku na całokształcie obrazu.
 
 ## Algorytmy
-
 Algorytm, wykorzystany do realizacji mechanizmu zmiany wielkości obrazu z uwzględnieniem jego zawartości to *Seam-Carving*. Został opracowany przez Shai Avidana z Mitsubishi Electric Research Laboratories oraz Ariela Shamira z Centrum Interdyscyplinarnego w Herzliya i Mitsubishi Electric Research Laboratories.
 Metoda ustala wagę każdego piksela obrazu i na jej podstawie odnajduje szwy (ścieżki pikseli o najmniejszej energii), które następnie zostają usuwane lub wstawiane, w zależności czy plik ma zostać pomniejszony czy powiększony. 
 
@@ -34,11 +32,9 @@ Przebadany został również wpływ zastosowania techniki *Forward-Energy*, któ
 
 
 ## Narzędzia
-
 Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka C++, jego bibliotek standardowych oraz biblioteki OpenCV. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku Java z wykorzystaniem biblioteki JavaFX. Oba komponenty zostały połączone przy użyciu JNI - natywnego interfejsu Javy.
 
 ## Testy
-
 Cała aplikacja została pokryta testami jednostkowymi. Ich zadaniem było sprawdzenie poprawności wykonywanych działań przez pojedyncze metody lub mechanizmy spełniające dane funkcjonalności. Badania weryfikowały różne możliwe ́scieżki przechodzenia po programie, wartości brzegowe oraz zgodność zwracanych wyników. Na potrzeby niektórych testów kod programu musiał zostać odpowiednio zmodyfikowany. Testy zostały napisane przy użyciu następujących narzędzi:
 
 - JUnit 4.12
@@ -46,7 +42,6 @@ Cała aplikacja została pokryta testami jednostkowymi. Ich zadaniem było spraw
 - Google Test
 
 ## Analiza
-
 Analiza mechanizmu zmiany obrazu z uwzględnieniem jego zawartości ma na celu zbadanie czy w ogóle warto go stosować, pokazanie korzyści płynących z tego podejścia oraz jego problemów i ograniczeń. Do oceny wyników zostały wykorzystane tzw. punkty kluczowe.
 W pracy do wykrycia punktów kluczowych został wykorzystany detektor Harris-Affine, a do opisu - deskryptor SIFT. Do wyznaczania tego typu punktów kluczowych za pomocą gotowego narzędzia.
 

@@ -1,20 +1,20 @@
 ---
 layout: post_english
-title:  "Wziuum e"
+title:  "Wziuum"
 date:   2019-11-15 23:12:50 +0100
 featured-img: wzium
 categories: [eng]
 ---
-Projekt został zrealizowany w czteroosobowej grupie. Naszym zadaniem było wymyślenie i przedstawienie wstępnego pomysłu na grę oraz jej implementacja. Ze względu na ograniczenia czasowe zdecydowaliśmy się na prostą grę, której celem jest przeniesienie świecącego kwadratu z jednego punktu do drugiego za pomocą precyzyjnych strzałów, odbić oraz specjalnych umiejętności. Gra została wykona z wykorzystaniem silnika Unity.
+The project was implemented in a group of four. Our task was to come up with and present the initial idea for the game and its implementation. Due to time constraints, we decided on a simple game whose goal is to move the glowing square from one point to another using precise shots, bounces and special skills. The game was made using the **Unity** engine.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/mobile.jpg)
 
-Idea gry jest bardzo prosta, ale postaraliśmy się urozmaicić rozgrywkę dodają różne rodzaje ścian oraz umiejętność odbicia w locie. Niektóre prześcia pozostają zamknięte, dopóki nie zebrane zostaną odpowiednie przedmioty znajdujące się na mapie. 
-Na grę składa się 6 poziomów, różnią się paletą kolorów oraz machanikami gry. Na początku etapy są statyczne, gracz zostaje zaznajomiony z podstawowymi rodzajami ścian: zwykłe od których kwadrat odbija się, klejące - przy których gracz zatrzymuje się i może ponownie wystrzelić kwadrat oraz ściany niszczące, których należy unikać - kontakt z nimi oznacza powrót do początku poziomu. Później jednak stopniowo dodawane są poruszające się elementy oraz dodatkowe mechaniki.
+The idea of ​​the game is very simple, but we tried to diversify the game by adding different types of walls and the ability to bounce on the fly. Some passages remain closed until the appropriate items on the map are collected.
+The game consists of 6 levels, they differ in the color palette and game mechanics. At the beginning, the stages are static, the player is familiar with the basic types of walls: ordinary, from which the square bounces, adhesive - at which the player stops and can shoot the square again, and destructive walls that should be avoided - contact with them means return to the beginning of the level. Later, however, moving elements and additional mechanics are gradually added.
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/rotate.gif)
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/mid_air.gif)
 
-Dwie osoby z naszej grupy zajmowały się tworzeniem grafik, zasobów gry oraz projektowaniem poziomów. Pozostała dwójka była odpowiedzialna za skrypty i implementacje mechanik gry. Należałem do drugiego zespołu.
+Two people from our group were involved in creating graphics, game resources and level design. The other two were responsible for the scripts and implementations of the game mechanic. I belonged to the second team.
 
-W trakcie rozwoju aplikacji doszliśmy do wniosku, że dobrym pomysłem byłoby zbudowanie jej również na urządzenia mobilne. Niestety nie starczyło na to czasu w podstawowym czasie przeznaczonym na rozwój aplikacji. Mimo to po terminie udało mi się odpowienio zmodyfikować obsługę sterowania oraz zbudować aplikację na urządzenia Android.
+During the development of the application, we came to the conclusion that it would also be a good idea to build it for mobile devices. Unfortunately, there was not enough time in the basic time for application development. Despite this, after the deadline I managed to modify the control service and build an application for Android devices.

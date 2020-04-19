@@ -1,36 +1,34 @@
 ---
 layout: post_english
-title:  "e Realistyczna symulacja wody"
+title:  "Realistic water simulation"
 date:   2020-01-29 23:12:50 +0100
 featured-img: elefun
 categories: [eng]
 ---
-## Cel projektu
-
-Celem pracy było utworzenie sceny 3D, wykorzystującej API graficzne OpenGL do realistycznego odwzorowania wody z użyciem zaawansowanych efektów graficznych. Aby prawidłowo zrealizować zadanie konieczna była implementacja technik imitujących zjawiska fizycznye, które opisują zachowanie się wody - między innymi efekt Fresnela, odbicie oraz załamanie wody.
+## Project goal
+The aim of the work was to create a 3D scene, using the OpenGL graphics API to realistically reproduce water using advanced graphic effects. To properly accomplish the task, it was necessary to implement techniques imitating physical phenomena that describe the behavior of water - including the Fresnel effect, reflection and refraction of water.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/dudv.gif)
 
 
-## Wynik prac
+## Result of work
+The completed scene shows a lake surrounded by a surface created using the open-source Blender software. The water surface itself is generated in the program code. Keyboard and mouse control allows free movement and rotation of the camera within the scene.
 
-Zrealizowana scena przedstawia jezioro otoczone przez powierzchnię utworzoną z użyciem oprogramowania open-source Blender. Sama tafla wody generowana jest w kodzie programu. Sterowanie z użyciem klawiatury i myszki umożliwia swobodne przemieszczanie i obracanie kamery w obrębie sceny.
-
-Większość efektów osiągnięta poprzez jednostki cieniujące, wśród nich można wymienić:
-- Refrakcja i odbicie - ustalana jest płaszczyzna przycinająca (clip plane), która dzieli całą scenę na obszar znajdujący się powyżej tafli waody oraz poniżej. Następnie utworzone zostają dwa fbo (frame buffer object). Na pierwszy z nich renderowany jest widok z kamery o niezmienionej pozycji, ale obcięty o wszystko ponad płaszczyzną przycinającą. Drugi fbo przechowuje widok z kamery analogicznie spoglądającej w stronę tafli wody, jednak przesuniętej w dół o wartość odpowiadającą dwukrotnej wysokości pierwotnej kamery. W tym przypadku kamera nie wdzi obszaru położonego poniżej płaszczyzny przycinającej. Na koniec obrazy z obu fbo nakładane są na taflę wody, dodany zostaje delikatny kolor niebieski oraz inne efekty.
-- Efekt Fresnela - decyduje o stosunku odbicia do refrakcji. Patrząc na wodę z góry użytkownik powienien bez przeszkód zobaczyć dno zbiornika, podczas gdy patrząc pod niewielkim kątem należy spodziewać się, że odbicie będzie bardzo wyraźne.
+Most of the effects achieved through the shading units, among them can be mentioned:
+- Refraction and reflection - a clip plane is established that divides the entire stage into an area above the waoda surface and below. Then two fbo (frame buffer object) are created. On the first of them, the camera view is rendered unchanged, but cut off by everything above the clipping plane. The second fbo stores the view from the camera looking in the same direction towards the water surface, but shifted down by the value corresponding to twice the height of the original camera. In this case, the camera does not see the area below the clipping plane. Finally, images from both fbo are applied to the water surface, a delicate blue color and other effects are added.
+- Fresnel effect - determines the ratio of reflection to refraction. Looking at the water from above, the user should see the bottom of the tank without hindrance, while looking at a small angle, the reflection should be expected to be very clear.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/fresnel.jpg)
 
-- Efekt mętnej wody - utworzona została mapa głębokości zbiornika wody. Na jej podstawie dodany kolor niebieski jest coraz bardziej intensywny w niżej położonych obszarach. Nadaje to efekt mętności, w głębinach nie jesteśmy w stanie dostrzec odbicia i refrakcji.
-- Zanikające krawędzi - za pomocą manipulacji składowej alfa koloru wody, staje się ona coraz mnie widoczna przy brzegach zbiornika.
-- Mapy dudv - w celu wprawienia wody w ruch zastosowane zostały dwie metody. Jedna z nich to mapy dudv. Z wczytanych tekstur pobierane są wartości nasycenia kolorów zielonego i czerwonego, na podstawie których nakładane na wodę zostają zniekształcenia. Tekstura przesuwana jest po tafli wody w czasie, dzięki czemu woda zdaje się być w ruchu.
-- Poruszanie wierzchołków - drugą metodą wprawienia tafli wody w ruch jest manipulacja jej siatką wierzchołków.
+- Murky water effect - a depth map of the water tank has been created. On its basis, the added blue color is more and more intense in the lower areas. This gives the effect of murkiness, in the depths we are not able to see the reflection and refraction.
+- Blending edges - by manipulating the alpha component of the water color, it becomes increasingly visible at the edges of the tank.
+- dudv maps - two methods were used to set the water in motion. One of them is dudv maps. From the loaded textures, saturation values ​​of green and red colors are taken, based on which distortions are applied to the water. The texture is moved over the water surface in time, thanks to which the water seems to be moving.
+- Moving mesh - the second method to set the water surface in motion is to manipulate its tops grid.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/moving_vert.gif)
 
 GitHub:  
-[Ruchomy mesh](https://github.com/jacekbla/opengl_water_moving_mesh)
+[Moving mesh](https://github.com/jacekbla/opengl_water_moving_mesh)
 
-[Mapy dudv](https://github.com/jacekbla/opengl_water_dudv)
+[dudv maps](https://github.com/jacekbla/opengl_water_dudv)
 

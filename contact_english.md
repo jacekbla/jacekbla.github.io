@@ -3,19 +3,19 @@ layout: page_english
 title: Contact
 permalink: /eng/contact/
 ---
-### Proszę o kontakt mailowy:  
+### Please contact me by email:  
 jacek.bldy@gmail.com  
 
-#### Telefon:  
+#### Telephone:  
 (+48) 784 967 596
  
-#### Media społecznościowe:  
+#### Social media:  
 [LinkedIn](https://www.linkedin.com/in/jacek-blady-47718a118)  
 [Facebook Messenger](https://m.me/jacek.blady.9)  
 
-### Kontakt poprzez Formspree
+### Contact via Formspree
 
-Proszę wpisać nazwę, adres email oraz treść wiadomości.
+Please enter the name, email address and content of the message.
 
 {% include form.html %}
 

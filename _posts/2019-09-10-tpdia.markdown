@@ -4,95 +4,46 @@ title:  "Klasyfikacja trajektorii środków transportu"
 date:   2019-09-10 23:12:50 +0100
 featured-img: tpdia
 ---
-## Wstęp
-Projekt skupia się na badaniu ruchu użytkownika, przedstawia rozwiązanie problemu ekstrakcji cech i klasyfikacji trajektorii różnych środków transportu. Badania skupiają się na analizie i odpowiednim przygotowaniu surowych trajektorii pobranych z bazy danych GeoLife oraz zaklasyfikowaniu ich do danego środka transportu przy pomocy głębokich sieci neuronowych. Według publikacji, na której projekt się opiera, estymacja środka transportu pozytywnie wpłynie na wiele obszarów badań, takich jak osobiste seriwsy wyznaczania trasy i odzwyskiwanie danych geograficznych. Celem pracy był przegląd, implementacja oraz analiza rozwiązania zaproponowanego w artykule. Zadanie zostało zrealizowane w dwuosobowym zespole.
+## Cel projektu
+Projekt skupia się na badaniu ruchu użytkownika, przedstawia rozwiązanie problemu ekstrakcji cech i klasyfikacji trajektorii różnych środków transportu. Badania skupiają się na analizie i odpowiednim przygotowaniu surowych trajektorii pobranych z bazy danych GeoLife oraz zaklasyfikowaniu ich do danego środka transportu przy pomocy głębokich sieci neuronowych. Celem pracy był przegląd, implementacja oraz analiza rozwiązania zaproponowanego w artykule. Zadanie zostało zrealizowane w dwuosobowym zespole. Ja byłem odpowiedzialny za pierwszą część pracy - przygotowanie danych.
 
 ## Przegląd publikacji
 Publikacja, na podstawie której zostało przeprowadzone badanie to **“Classifying spatial trajectories using representational learning”**, napisana przez Yuki Endo, Hiroyuki Toda, Kyosuke Nishida i Jotaro Ikedo.
-Zaproponowane rozwiązanie bardzo dobrze radzi sobie z problemem klasyfikacji trajektorii. Z badań wynika, że głębokie sieci neuronowe dobrze radzą sobie z analizą obrazów, dlatego autorzy zdecydowali się przekształcić trajektorie i reprezentować je w formie graficznej. Obraz wykorzystuje skalę szarości, piksele o barwie innej niż czarna pokazują przebieg trasy. Taki format pozwala na zapis informacji o czasie - im jaśniejszy piksel więcej czasu
-użytkownik spędził w danym miejscu. Tak przygotowane obrazy przekazywane są głębokiej sieci neuronowej, gdzie następuje automatyczna ekstrakcja cech. Sieć neuronowa uczy się rozpoznawać cechy wyróżniające dane sposoby transportu i według automatycznie wyuczonych reguł klasyfikuje obrazy do wyodrębnionych klas. Publikacja odrzuca cztery etykiety środków transportu ze względu na niewielką liczbę danych, w naszym rozwiązaniu postąpiliśmy podobnie, jednak zdecydowaliśmy się zachować większość innych danych.
+Zaproponowane rozwiązanie bardzo dobrze radzi sobie z problemem klasyfikacji trajektorii. Z badań wynika, że głębokie sieci neuronowe dobrze radzą sobie z analizą obrazów, dlatego autorzy zdecydowali się przekształcić trajektorie i reprezentować je w formie graficznej. Obraz wykorzystuje skalę szarości, piksele o barwie innej niż czarna pokazują przebieg trasy. Taki format pozwala na zapis informacji o czasie - im jaśniejszy piksel tym więcej czasu użytkownik spędził w danym miejscu. Tak przygotowane obrazy przekazywane są głębokiej sieci neuronowej, gdzie następuje automatyczna ekstrakcja cech. Sieć neuronowa uczy się rozpoznawać cechy wyróżniające dane sposoby transportu i według automatycznie wyuczonych reguł klasyfikuje obrazy do wyodrębnionych klas.
 
 ## Rozwiązanie
 Postanowiliśmy podzielić projekt na dwa programy. Pierwszy z nich zajmuje się przekształceniem surowych trajektorii w obrazy gotowe do przekazania sieci neuronowej. Program ten został napisany w języku *Java*. Drugi program napisany w języku *Python* zajmuje się trenowaniem sieci neuronowej i walidacją modelu. Zdecydowaliśmy się na to środowisko głównie ze względu na wsparcie bibliotek zewnętrznych, które implementują interfejs umożliwiający pracę z głębokimi sieciami neuronowymi.
 
-### Opis danych
-Zbiór danych GeoLife zawierają informacje o trasach, zebranych przez Microsoft Research Asia przebytych przez 182 użytkowników w okresie kwiecień 2007 - sierpień 2012. Trajektorie obejmują obszar 30 miast Chin oraz kilku z Europy i USA.
-Do surowych trajektorii zostały załączone również etykiety z informacją o środku transportu w danym wycinku czasu. Trasy, które nie posiadają takich etykiety zostały przez nas odrzucone i nie brały udziału w badaniu.
-W ramach tych plików wyróżnione zostały następujące środki transportu:
-- WALK
-- BIKE
-- BUS
-- CAR
-- SUBWAY
-- TRAIN
-- TAXI
-- AIRPLANE
-- BOAT
-- RUN
-- MOTORCYCLE
-Ze względu na niewielką liczbę odczytów odrzucone zostały również dane dotyczące samolotów, statków, biegu oraz motocyklu.
-
-
 ### Segmentacja i przygotowanie danych
-Przygotowanie danych polega na zmianie plików .plt w obrazy w formacie .png. Według autorów artykułu głęboka sieć neuronowa dobrze radzi sobie z plikami w postaci obrazu, dlatego zdecydowaliśmy się na to przekształcenie. 
+Przygotowanie danych polega na przekształceniu plików .plt w obrazy w formacie .png. Według autorów artykułu głęboka sieć neuronowa dobrze radzi sobie z plikami w postaci obrazu, dlatego zdecydowaliśmy się na to przekształcenie. 
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tpdia/img_gen.jpg)
 
 Proces ten można podzielić na kilka etapów:
-- Segmentacja - na początku dane muszą zostać poddane segmentacji. Godzina rozpoczęcia i zakończenia danego segmentu zostaje pobrana z pliku, zawierającego etykiety. Wszystkie punkty znajdujące się w tym przedziale czasowym stanowią jeden segment. Kolejne etapy zostają wykonane na pojedynczych segmentach, co oznacza, że z każdego z nich powstanie jeden obraz, który będzie zaklasyfikowany do jednego ze środków transportu.
-- Próbkowanie - następnie w celu ustawienia równych odcinków czasu pomiędzy punktami trasy należy poddać ją próbkowaniu. Czas próbkowania w naszym rozwiązaniu wynosił 1 sekundę, co oznacza, że w przypadku przerw między odczytami większych niż ta wartość zostały dodane nowe punkty, w celu zapełnienia tego okresu. Wartości dodanych punktów są kopiowane z wcześniejszego odczytu.
-- Przycinanie - następnie w celu ujednolicenia danych rozpatrywany obszar zostaje przycięty w taki sposób, aby wszystkie trasy zawierały dane z terenów o takich samych rozmiarach. Wyznaczony zostaje środek trasy (średnia arytmetyczna szerokości i długości geograficznych wszystkich punktów trajektorii). Później wszystkie punkty, które znajdują się w większej odległości od punktu środkowego niż zadana wartość (w naszym rozwiązaniu wynosi ona 0.06 stopnia) zostają odrzucone.
-- Przypisanie punktów do pikseli - tak przygotowana trasa może zostać poddana przekształceniu w obraz. Należy teraz przypisać poszczególne punkty trajektorii do pikseli obrazu wyjściowego. Na wejściu programu podawana jest szerokości i długość obrazu w liczbie pikseli (w naszym rozwiązaniu rozdzielczość została ustawiona na 48x48). Obszar występowania punktów, zdefiniowany przez limity wyznaczone w poprzednim punkcie dzielony jest na tyle równych części ile pikseli ma znajdować się w obrazie wyjściowym. Utworzona zostaje tablica o wymiarach odpowiadających rozdzielczości obrazu, do której zliczane zostają punkty znajdujące się w danym wycinku obszaru występowania trasy. Po tym etapie tablica zawierająca liczności punktów występujących w danych wycinkach jest gotowa do przekształcenia w obraz graficzny.
-- Przypisanie wartości pikselom - ostatnim etapem procesu zmiany trajektorii w obraz jest utworzenie samego obrazu. Wartości w tablicy utworzone w poprzednim kroku zostają poddane normalizacji, gdzie wartość największa zostaje zmieniona na 255, proporcjonalnie modyfikowane są pozostałe wartości. Następnie na podstawie tablicy przypisane zostają wartości koloru każdego piksela, jak można zauważyć komórki zawierające wyższe wartości zostaną odwzorowane na jaśniejsze piksele, co przekłada się na zapis informacji o czasie spędzonym w danym miejscu.
+- Segmentacja - wszystkie punkty znajdujące się w danym przedziale czasowym zapisane zostają jako jeden segment.
+- Próbkowanie - następnie w celu ustawienia równych odcinków czasu pomiędzy punktami trasy należy poddać ją próbkowaniu.
+- Przycinanie - następnie w celu ujednolicenia danych rozpatrywany obszar zostaje przycięty w taki sposób, aby wszystkie trasy zawierały dane z terenów o takich samych rozmiarach.
+- Przypisanie punktów do pikseli - należy teraz przypisać poszczególne punkty trajektorii do pikseli obrazu wyjściowego. Utworzona zostaje tablica o wymiarach odpowiadających rozdzielczości obrazu, do której zliczane zostają punkty znajdujące się w danym wycinku obszaru występowania trasy. Po tym etapie tablica zawierająca liczności punktów występujących w danych wycinkach jest gotowa do przekształcenia w obraz graficzny.
+
+![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tpdia/img_gen2.jpg)
+
+- Przypisanie wartości pikselom - wartości w tablicy utworzone w poprzednim kroku zostają poddane normalizacji, gdzie wartość największa zostaje zmieniona na 255, proporcjonalnie modyfikowane są pozostałe wartości. Następnie na podstawie tablicy przypisane zostają wartości koloru każdego piksela.
 
 Przykładowe obrazy wyjściowe:
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tpdia/example_imgs.jpg)
 
 ### Wykorzystane biblioteki zewnętrzne
 Jak już zostało wspomniane zdecydowaliśmy się na prace z językiem *Python* ze względu na potężne zaplecze w dziedzinie uczenia maszynowego i sieci neuronowych. W szczególności zależało nam na wykorzystaniu bibliotek:
-- Tensorflow - otwartoźródłowa biblioteka programistyczna napisana przez Google Brain Team. Wykorzystywana jest w uczeniu maszynowym i głębokich sieciach neuronowych. Biblioteka może do działania wykorzystywać zarówno karty graficzne, procesory (m.in. dla urządzeń mobilnych oraz systemów wbudowanych), jak i wyspecjalizowane mikroprocesory
-- Keras - to biblioteka skupiona na sieciach neuronowych typu open source napisana w języku *Python*. Może współdziałać z TensorFlow, Microsoft Cognitive Toolkit, Theano lub PlaidML. Zaprojektowana, aby umożliwić szybkie eksperymentowanie z głębokimi sieciami neuronowymi. Została opracowana w ramach prac badawczych projektu ONEIROS (Neuroelektroniczny inteligentny system operacyjny robotów elektronicznych), a jego głównym autorem i opiekunem jest François Chollet, inżynier Google.
-- NumPy - jedno z najbardziej popularnych narzędzi w środowisku *Python*. Dodaje obsługę dużych, wielowymiarowych tablic i macierzy, a także duży zbiór funkcji matematycznych wysokiego poziomu do obsługi struktur tablicowych.
-
+- Tensorflow
+- Keras
+- NumPy
 
 ### Uczenie i klasyfikacja
 Dane przygotowywane przez program napisany w języku *Java* zapisywane są do folderów opisanych nazwami środka transportu wykorzystanego na danym obrazie. Następnie program uczący wczytuje dane z folderów i stosując techniki Data Augumentation powiększa zbiór danych treningowych.
 
-    Data Augumentation - są to techniki mające na celu powiększenie posiadanego zbioru
-    danych przez zastosowanie na tych danych odpowiednich modyfikacji. Najczęściej techniki
-    tego rodzaju są stosowane w programach związanych z obrazami. Przykładowymi rodzajami
-    takich metod mogą być na przykład wykonanie na obrazach: rotacji, odbicia symetrycznego,
-    przybliżenia, wycięcia, zmiany kontrastu.
-
 W wykonywanych testach sprawdzano efekty otrzymywane przez wykonanie rotacji, lustrzanego odbicia, przycinania i przybliżania danych na obrazach. Testy wykonane przez grupę wykazały pozytywny wpływ generowania dodatkowych danych przez rotację i odbicia, nie dostrzeżono jednak pozytywnego wpływu przycinania i przybliżania obrazów. Sieć neuronowa wykorzystana w ostatecznym rozwiązaniu składała się z trzech warstw konwolucyjnych i czterech w pełni połączonych. Wszystkie warstwy oprócz ostatniej wykorzystują funkcję aktywacyjną ReLU.
-
-    Funkcja aktywacyjna ReLU - dla wartości poniżej 0 przyjmuje wartość równą 0, a powyżej 0
-    funkcja przyjmuje postać funkcji tożsamościowej.
 
 W ostatniej warstwie wykorzystano funkcję softmax, świetnie sprawdzającej się w problemach klasyfikacyjnych, w których chcemy otrzymać prawdopodobieństwo przyporządkowania danych wejściowych do danej klasy. Wykonane zostały testy, mające na celu ustalenie właściwych rozmiarów poszczególnych warstw. Wykorzystaną przez nas funkcją błędu była funkcja krosentropii. W procesie uczenia wykorzystano optymalizator adam oraz dropout o wartości 0.5 na przedostatniej warstwie sieci neuronowej. Dropout jest techniką polegającą na zerowaniu wartości losowo wybranego neuronu w celu uniknięcia przeuczenia sieci neuronowej.
 
 ### Weryfikacja
 Przed wygenerowaniem obrazów podzieliliśmy użytkowników na pięć grup, w celu wykonania w pełni wiarygodnej metody kroswalidacji. W ten sposób otrzymaliśmy grupy danych pochodzących z różnych, w pełni niezależnych od siebie źródeł. Korzystając z tej metody wykonaliśmy trening pięciu modeli, za każdym razem testując model na innej części i wykorzystując do treningu pozostałe cztery. Podział ze względu na użytkowników ma jednak wadę w postaci nierównej obecności danych treningowych różnych klas w grupie, np. w grupie nr 4 otrzymaliśmy nadreprezentację danych dotyczących reprezentacji trajektorii samochodów co spowodowało trudności w fazie testowania.
-
-## Wyniki
-Otrzymane przez nas wyniki w procesie kroswalidacji przedstawiono w poniższej tabeli:
-
-| Grupa 1 | Grupa 2 | Grupa 3 | Grupa 4 | Grupa 5 | Średnio |
-| :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| 0,607   | 0,668   | 0,666   | 0,416   | 0,625   | 0,596   |
-
-Niższy wynik w grupie 4 wynika z faktu, że w danej grupie znajduje się ponad połowa
-wszystkich danych treningowych dla trajektorii samochodów. Sytuacja jest niestety trudna w
-rozwiązaniu przy założeniu rozdzielenia opartego na podziale użytkowników, ponieważ
-bardzo duża część danych dotyczących trajektorii samochodów została dostarczona przez
-jednego użytkownika numer 128.
-Wykonane wykresy prezentujące precyzję klasyfikacji podczas uczenia sieci neuronowej dla
-jednej z grup. Pierwszy wykres przedstawia precyzję na zbiorze treningowym, a drugi na
-testowym:
-
-![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tpdia/charts.jpg)
-
-Jak widać coraz lepsze się wyniki na zbiorze treningowym, nie zawsze oddają poprawę
-wyników na zbiorze testowym. Szczególnym trudnym problemem było podzielenie
-użytkowników na grupy w taki sposób, żeby w każdej grupie była podobna ilość danych
-każdej kategorii, co jest jedną z przyczyn dużych wahań wyników na zbiorze testowym.

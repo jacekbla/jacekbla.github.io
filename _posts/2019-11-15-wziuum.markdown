@@ -4,7 +4,7 @@ title:  "Wziuum"
 date:   2019-11-15 23:12:50 +0100
 featured-img: wzium
 ---
-Projekt został zrealizowany w czteroosobowej grupie. Naszym zadaniem było wymyślenie i przedstawienie wstępnego pomysłu na grę oraz jej implementacja. Ze względu na ograniczenia czasowe zdecydowaliśmy się na prostą grę, której celem jest przeniesienie świecącego kwadratu z jednego punktu do drugiego za pomocą precyzyjnych strzałów, odbić oraz specjalnych umiejętności. Gra została wykona z wykorzystaniem silnika Unity.
+Projekt został zrealizowany w czteroosobowej grupie. Naszym zadaniem było wymyślenie i przedstawienie wstępnego pomysłu na grę oraz jej implementacja. Ze względu na ograniczenia czasowe zdecydowaliśmy się na prostą grę, której celem jest przeniesienie świecącego kwadratu z jednego punktu do drugiego za pomocą precyzyjnych strzałów, odbić oraz specjalnych umiejętności. Gra została wykona z wykorzystaniem silnika **Unity**.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/mobile.jpg)
 

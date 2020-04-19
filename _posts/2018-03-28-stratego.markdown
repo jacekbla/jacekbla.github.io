@@ -4,7 +4,7 @@ title:  "Stratego"
 date:   2018-03-28 23:12:50 +0100
 featured-img: minmax
 ---
-## Stratego
+## Cel projektu
 Głównym celem projektu była implementacja silnika gry „Stratego” oraz zapoznanie się i przenalizowanie algorytmów rozwiązywania gier logicznych. 
 Gra polega na zajmowaniu kolejnych pól na planszy. W czasie swojego ruchu gracz wybiera wolne pole które chce zająć, jeżeli wybrane pole tworzy z innymi zajętymi polami co najmniej jedną linię (od krawędzi planszy do krawędzi), składającą się z przynajmniej 3 pól, otrzymuje wówczas liczbę punktów równą liczbie pól, z których składają się wszystkie linie przechodzące przez zajęte pole. Gracze wykonują ruchy na przemian. Niektóre warianty gry przewidują punkty tylko za pola wcześniej przez jednego z graczy oraz po jednym punkcie za każdą linię, niezależnie od długości. Rozmiary planszy nie są z góry ustalone, mogą się zmieniać.
 
