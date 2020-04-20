@@ -4,7 +4,7 @@ title:  "Pixeluto"
 date:   2018-04-24 23:12:50 +0100
 featured-img: pixeluto
 ---
-Jedna z moich pierwszych gier wykonanych przy pomocy silnika Unity. Prosta **gra platformowa 2D**, na której testowałem różne narzędzia dostępne w programie. W czasie rozwoju aplikacji zapoznałem się z podstawami animacji, tworzenia interfejsu użytkownika czy obsługi dźwięku w silniku Unity.
+Jedna z moich pierwszych gier wykonanych przy pomocy silnika Unity. Prosta **gra platformowa 2D**, na której testowałem różne narzędzia dostępne w programie. W czasie rozwoju aplikacji zapoznałem się z podstawami animacji, tworzenia interfejsu użytkownika czy obsługi dźwięku w silniku **Unity**.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/pixeluto.jpg)
 

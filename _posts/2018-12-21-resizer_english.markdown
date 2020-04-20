@@ -15,7 +15,7 @@ It is expected that the photo or website displayed on your desktop computer will
 This work deals with such a problem - the use of unnecessary space for important objects without compromising the overall picture.
 
 ## Algorithms
-The algorithm used to implement the mechanism of content-aware image resizing is *Seam-Carving*. It was developed by Shai Avidan from Mitsubishi Electric Research Laboratories and Ariel Shamir from the Interdisciplinary Center at Herzliya and Mitsubishi Electric Research Laboratories.
+The algorithm used to implement the mechanism of content-aware image resizing is **Seam-Carving**. It was developed by Shai Avidan from Mitsubishi Electric Research Laboratories and Ariel Shamir from the Interdisciplinary Center at Herzliya and Mitsubishi Electric Research Laboratories.
 The method determines the weight of each pixel of the image and based on it finds seams (pixel paths with the lowest energy), which are then removed or inserted, depending on whether the file is to be reduced or enlarged.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/comparasion_eng.jpg)
@@ -28,7 +28,7 @@ The algorithm also allows the implementation of several interesting functionalit
 - object deletion
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/delete_eng.jpg)
 
-The effect of the *Forward-Energy* technique was also studied, which turned out to be very beneficial for the modified image - it reduced the intensity or completely got rid of artifacts that tend to appear at larger values ​​of image size change.
+The effect of the **Forward-Energy** technique was also studied, which turned out to be very beneficial for the modified image - it reduced the intensity or completely got rid of artifacts that tend to appear at larger values ​​of image size change.
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/forward_energy_eng.jpg)
 
 
@@ -52,7 +52,7 @@ Support software has been implemented that accepts .haraff.sift files and analyz
     
 - Determination of key point pairs - a pair of key points are two points whose characteristic feature is mutual neighborship, i.e. the nearest neighbor of point A is point B and the nearest neighbor of point B is point A.
 
-- Visualization of key point pairs - the program displays both images with the help of the *OpenCV* library and draws lines connecting pairs of key points.
+- Visualization of key point pairs - the program displays both images with the help of the **OpenCV** library and draws lines connecting pairs of key points.
     
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/key_points.jpg)
     

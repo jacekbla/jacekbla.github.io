@@ -5,7 +5,7 @@ date:   2020-01-29 23:12:50 +0100
 featured-img: elefun
 ---
 ## Cel projektu
-Celem pracy było utworzenie sceny 3D, wykorzystującej API graficzne OpenGL do realistycznego odwzorowania wody z użyciem zaawansowanych efektów graficznych. Aby prawidłowo zrealizować zadanie konieczna była implementacja technik imitujących zjawiska fizycznye, które opisują zachowanie się wody - między innymi efekt Fresnela, odbicie oraz załamanie wody.
+Celem pracy było utworzenie sceny 3D, wykorzystującej API graficzne **OpenGL** do realistycznego odwzorowania wody z użyciem zaawansowanych efektów graficznych. Aby prawidłowo zrealizować zadanie konieczna była implementacja technik imitujących zjawiska fizycznye, które opisują zachowanie się wody - między innymi efekt Fresnela, odbicie oraz załamanie wody.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/dudv.gif)
 

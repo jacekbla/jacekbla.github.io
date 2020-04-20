@@ -42,11 +42,11 @@ As already mentioned, we decided to work with the **Python** language due to the
 - NumPy
 
 ### Learning and classification
-Prepared data, that is labeled, is saved to folders described by the name of the means of transport. Then the learning program loads data from folders and, using Data Augumentation techniques, enlarges the training data set.
+Prepared data, that is labeled, is saved to folders described by the name of the means of transport. Then the learning program loads data from folders and, using **Data Augumentation** techniques, enlarges the training data set.
 
-The tests performed checked the effects obtained by performing rotation, mirroring, cropping and zooming of data on the images. Performed tests showed a positive effect of generating additional data by rotation and reflection, but the positive effect of cropping and zooming was not noticed. The neural network used in the final solution consisted of three convolution layers and four fully connected. All layers except the last one use the ReLU activation function.
+The tests performed checked the effects obtained by performing rotation, mirroring, cropping and zooming of data on the images. Performed tests showed a positive effect of generating additional data by rotation and reflection, but the positive effect of cropping and zooming was not noticed. The neural network used in the final solution consisted of three convolution layers and four fully connected. All layers except the last one use the **ReLU** activation function.
 
-The last layer uses the softmax function. Tests were carried out to determine the correct size of each layer. The error function we used was the cross-entropy function. The learning process uses the adam optimizer and dropout value of 0.5 on the penultimate layer of the neural network.
+The last layer uses the **softmax** function. Tests were carried out to determine the correct size of each layer. The error function we used was the cross-entropy function. The learning process uses the **adam** optimizer and **dropout** with value of 0.5 on the penultimate layer of the neural network.
 
 ### Verification
 Before generating the images, we divided users into five groups in order to perform a fully reliable method of cross-validation. In this way, we received data groups from various, fully independent sources. Using this method, we performed training of five models, each time testing the model on a different part and using the remaining four for training. Division by user has a disadvantage in the form of uneven presence of training data of different classes in the group, e.g. in group No. 4 we received overrepresentation of data regarding the representation of car trajectories, which caused difficulties in the testing phase.

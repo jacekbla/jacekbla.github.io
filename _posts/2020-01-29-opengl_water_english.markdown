@@ -6,7 +6,7 @@ featured-img: elefun
 categories: [eng]
 ---
 ## Project goal
-The aim of the work was to create a 3D scene, using OpenGL graphics API to realistically reproduce water with advanced graphic effects. To properly accomplish the task, it was necessary to implement techniques imitating physical properties that describe the behavior of water - including the Fresnel effect, reflection and refraction of water.
+The aim of the work was to create a 3D scene, using **OpenGL** graphics API to realistically reproduce water with advanced graphic effects. To properly accomplish the task, it was necessary to implement techniques imitating physical properties that describe the behavior of water - including the Fresnel effect, reflection and refraction of water.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/dudv.gif)
 

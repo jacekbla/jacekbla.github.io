@@ -14,7 +14,7 @@ Oczekuje się, że zdjęcie lub strona internetowa wyświetlana na komputerze st
 Niniejsza praca zajmuję się właśnie takim problemem - wykorzystaniem niepotrzebnej przestrzeni na rzecz obiektów ważnych bez uszczerbku na całokształcie obrazu.
 
 ## Algorytmy
-Algorytm, wykorzystany do realizacji mechanizmu zmiany wielkości obrazu z uwzględnieniem jego zawartości to *Seam-Carving*. Został opracowany przez Shai Avidana z Mitsubishi Electric Research Laboratories oraz Ariela Shamira z Centrum Interdyscyplinarnego w Herzliya i Mitsubishi Electric Research Laboratories.
+Algorytm, wykorzystany do realizacji mechanizmu zmiany wielkości obrazu z uwzględnieniem jego zawartości to **Seam-Carving**. Został opracowany przez Shai Avidana z Mitsubishi Electric Research Laboratories oraz Ariela Shamira z Centrum Interdyscyplinarnego w Herzliya i Mitsubishi Electric Research Laboratories.
 Metoda ustala wagę każdego piksela obrazu i na jej podstawie odnajduje szwy (ścieżki pikseli o najmniejszej energii), które następnie zostają usuwane lub wstawiane, w zależności czy plik ma zostać pomniejszony czy powiększony. 
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/comparasion.jpg)
@@ -27,12 +27,12 @@ Algorytm umożliwia również implementację kilku ciekawych funkcjonalności, t
 - usuwanie obiektu
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/delete.jpg)
 
-Przebadany został również wpływ zastosowania techniki *Forward-Energy*, która okazała się bardzo korzystna dla modyfikowanego obrazu - zmniejszała ona intensywność lub całkowicie pozbywała się artefaktów, które mają tendencje do pojawiania się przy większych wartościach zmiany rozmiaru obrazu.
+Przebadany został również wpływ zastosowania techniki **Forward-Energy**, która okazała się bardzo korzystna dla modyfikowanego obrazu - zmniejszała ona intensywność lub całkowicie pozbywała się artefaktów, które mają tendencje do pojawiania się przy większych wartościach zmiany rozmiaru obrazu.
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/forward_energy.jpg)
 
 
 ## Narzędzia
-Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka *C++*, jego bibliotek standardowych oraz biblioteki **OpenCV**. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku *Java* z wykorzystaniem biblioteki **JavaFX**. Oba komponenty zostały połączone przy użyciu **JNI** - natywnego interfejsu Javy.
+Algorytm Seam-Carving oraz większość funkcjonalności programu została zaimplementowana z użyciem języka *C++*, jego bibliotek standardowych oraz biblioteki **OpenCV**. Całość została zawarta w bibliotece dynamicznej DLL. Interfejs graficzny wykorzystujący te funkcjonalności został napisany w języku *Java* z wykorzystaniem biblioteki **JavaFX**. Oba komponenty zostały połączone przy użyciu **JNI** - Natywnego Interfejsu Javy.
 
 ## Testy
 Cała aplikacja została pokryta testami jednostkowymi. Ich zadaniem było sprawdzenie poprawności wykonywanych działań przez pojedyncze metody lub mechanizmy spełniające dane funkcjonalności. Badania weryfikowały różne możliwe ́scieżki przechodzenia przez program, wartości brzegowe oraz zgodność zwracanych wyników. Na potrzeby niektórych testów kod programu musiał zostać odpowiednio zmodyfikowany. Testy zostały napisane przy użyciu następujących narzędzi:
@@ -51,7 +51,7 @@ Zaimplementowane zostało oprogramowanie pomocnicze, przyjmujące pliki .haraff.
     
 - Wyznaczanie par punktów kluczowych - para punktów kluczowych to dwa punkty, których cechą charakterystyczną jest wzajemne sąsiedztwo, tzn. najbliższym sąsiadem punktu A jest punkt B oraz najbliższym sąsiadem punktu B jest punkt A. 
 
-- Wizualizacja par punktów kluczowych - program wyświetla oba obrazy z pomocą biblioteki *OpenCV* i rysuje linie łączące pary punktów kluczowych.
+- Wizualizacja par punktów kluczowych - program wyświetla oba obrazy z pomocą biblioteki **OpenCV** i rysuje linie łączące pary punktów kluczowych.
     
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/resizer/key_points.jpg)
     

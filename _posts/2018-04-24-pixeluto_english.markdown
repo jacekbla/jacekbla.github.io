@@ -6,7 +6,7 @@ featured-img: pixeluto
 categories: [eng]
 ---
 
-One of my first games made with the Unity engine. A simple **2D platformer** in which I tested various tools available in the program. During the development of the application, I learned about the basics of animation, creating a user interface and sound support in the Unity engine.
+One of my first games made with the Unity engine. A simple **2D platformer** in which I tested various tools available in the program. During the development of the application, I learned about the basics of animation, creating a user interface and sound support in the **Unity** engine.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/pixeluto.jpg)
 
