@@ -12,11 +12,13 @@ jacek.bldy@gmail.com
 #### Social media:  
 [LinkedIn](https://www.linkedin.com/in/jacek-blady-47718a118)  
 [Facebook Messenger](https://m.me/jacek.blady.9)  
+<br/>
+<br/>
 
 ### Formspree
 
 Please enter the name, email address and content of the message.
 
-{% include form.html %}
+{% include form_eng.html %}
 
 {% include modal.html %}

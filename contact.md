@@ -12,6 +12,8 @@ jacek.bldy@gmail.com
 #### Media społecznościowe:  
 [LinkedIn](https://www.linkedin.com/in/jacek-blady-47718a118)  
 [Facebook Messenger](https://m.me/jacek.blady.9)  
+<br/>
+<br/>
 
 ### Formspree
 

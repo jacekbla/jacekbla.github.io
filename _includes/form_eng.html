@@ -1,6 +1,6 @@
 <form id="contactForm" action="https://formspree.io/{{site.email}}" method="post" novalidate>
     <div class="form__input half">
-      <label for="name">Nazwa</label>
+      <label for="name">Name</label>
       <input type="text" name="name" id="name" autocomplete="name" required>
     </div>
   
@@ -10,12 +10,12 @@
     </div>
   
     <div class="form__input">
-      <label for="message">Treść wiadomości</label>
+      <label for="message">Message</label>
       <textarea type="text" name="message" id="message" rows="7" autocomplete="message" required></textarea>
     </div>
   
     <input type="hidden" name="_subject" value="Website Form submission">
     <input type="hidden" name="_format" value="plain" />
     <input class="hidden" type="text" name="_gotcha">
-    <button class="btn js-submit" type="submit" value="Send">Wyślij</button>
+    <button class="btn js-submit" type="submit" value="Send">Send</button>
   </form>
