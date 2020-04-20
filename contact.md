@@ -13,7 +13,7 @@ jacek.bldy@gmail.com
 [LinkedIn](https://www.linkedin.com/in/jacek-blady-47718a118)  
 [Facebook Messenger](https://m.me/jacek.blady.9)  
 
-### Kontakt poprzez Formspree
+### Formspree
 
 Proszę wpisać nazwę, adres email oraz treść wiadomości.
 

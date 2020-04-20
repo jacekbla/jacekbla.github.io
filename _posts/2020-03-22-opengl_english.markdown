@@ -6,14 +6,14 @@ featured-img: ogl1
 categories: [eng]
 ---
 ## Project goal
-The purpose of the work is to implement a graphic engine using the **OpenGL** graphic API as well as **GLFW** and **GLEW** support tools. As part of the work, various methods will be added gradually to improve the performance of the tool. The work will focus on examining the impact of these techniques on the overall efficiency of the engine. To this end, parameters will be determined on the basis of which it will be possible to evaluate the tool's work. The tests will be carried out on many stages, using various objects in such a way as to analyze various aspects of engine operation.
+The purpose of the work is to implement a graphics engine using the **OpenGL** graphic API as well as **GLFW** and **GLEW** support tools. As a part of the work, various methods will be added gradually to improve the performance of the tool. The work will focus on examining the impact of these techniques on the overall performance of the engine. For this benchmarks will be determined on the basis of which it will be possible to evaluate the tool's work. The tests will be carried out on many scenes, using various objects in such a way as to analyze various aspects of engine work.
 
-The project is my master's thesis, it is not finished.
+The project is my master's thesis and is not yet finished.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/ogl.jpg)
 
 ## Methods for improving performance
-The project provides for the implementation of techniques such as:
+The project will implement methods such as:
 - Mipmapping
 - Occlusion culling
 - Backface culling
@@ -23,21 +23,22 @@ The project provides for the implementation of techniques such as:
 - Texture atlases
 
 ## Work status
-The basic version of the graphics engine has now been built. This character uses any of the techniques studied - it will be the basis on which the analysis will be carried out.
+The basic version of the graphics engine has now been built. This version doesn't uses any of the studied techniques - it will be the basis on which the analysis will be carried out.
 The engine has mechanisms to display the basic scene:
-- Support for objects in .obj format and textures in .bmp and .png format.
-- Terrain - terrain generation based on height maps and mixing terrain textures using blend maps.
+- Support for models in .obj data format and textures in .bmp and .png format.
+- Terrain - terrain generation based on height maps and mixing textures using blend maps.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/multitextures.jpg)
 
 - Water - water implementation using various techniques ([more informations here](https://jacekbla.github.io/eng/2020/01/29/opengl_water_english.html))
 
-- Many light sources, including spotlights.
+- Many light sources support, including spotlights.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/point_light.jpg)
 
-- Skybox - a cube-based skoybox has been implemented as the background of the stage.
-- Fog - depending on the distance, objects on the stage are becoming less visible.  
+- Skybox - a cube-based skybox has been implemented as the background of the scene.
+- Fog - depending on the distance, objects on the stage become less visible. 
+- Camera control - supports mouse and keyboard.  
 
 [BitBucket](https://bitbucket.org/jacekbla/opengl1)
 
