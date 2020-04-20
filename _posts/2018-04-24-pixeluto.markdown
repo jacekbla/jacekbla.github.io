@@ -10,7 +10,7 @@ Jedna z moich pierwszych gier wykonanych przy pomocy silnika Unity. Prosta **gra
 
 Bohater gry może skakać, szczekać oraz wystrzelić kiełbasę, która skutecznie radzi sobie ze złymi kotami uniemożliwiającymi przejście przez segmenty gry. Na każdym z poziomów zostały rozmieszczone dodatkowe obiekty, które gracz może zbierać, otrzymując punkty. Etap kończy się po dotarciu do złotej kiełbasy.
 
-Gra została zmodyfikowana, aby wspierać urządzenia mobilne z systemem Android. Ta wersja dodała przyciski sterujące umożliwiające nawigację za pomocą ekranu dotykowego.
+Gra została zmodyfikowana, aby wspierać urządzenia mobilne z systemem **Android**. Ta wersja dodała przyciski sterujące umożliwiające nawigację za pomocą ekranu dotykowego.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/pixeluto/mobile.jpg)
 

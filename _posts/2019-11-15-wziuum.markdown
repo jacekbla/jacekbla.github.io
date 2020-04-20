@@ -16,4 +16,4 @@ Dwie osoby z naszej grupy zajmowały się tworzeniem grafik, zasobów gry oraz p
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/rotate.gif)
 
-W trakcie rozwoju aplikacji doszliśmy do wniosku, że dobrym pomysłem byłoby zbudowanie jej również na urządzenia mobilne. Niestety nie starczyło na to czasu w podstawowym czasie przeznaczonym na rozwój aplikacji. Mimo to po terminie udało mi się odpowienio zmodyfikować obsługę sterowania oraz zbudować aplikację na urządzenia Android.
+W trakcie rozwoju aplikacji doszliśmy do wniosku, że dobrym pomysłem byłoby zbudowanie jej również na urządzenia mobilne. Niestety nie starczyło na to czasu w podstawowym czasie przeznaczonym na rozwój aplikacji. Mimo to po terminie udało mi się odpowienio zmodyfikować obsługę sterowania oraz zbudować aplikację na urządzenia **Android**.

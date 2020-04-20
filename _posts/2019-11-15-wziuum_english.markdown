@@ -17,4 +17,4 @@ Two people from our group were involved in creating graphics, game resources and
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/wzium/rotate.gif)
 
-During the development of the application, we came to the conclusion that it would also be a good idea to build it for mobile devices. Unfortunately, there was not enough time in the basic time for application development. Despite this, after the deadline I managed to modify the controls and build the application for Android devices.
+During the development of the application, we came to the conclusion that it would also be a good idea to build it for mobile devices. Unfortunately, there was not enough time in the basic time for application development. Despite this, after the deadline I managed to modify the controls and build the application for **Android** devices.
