@@ -5,7 +5,7 @@ navigation: # Navigation links
   - {name: 'Kontakt', link: '/contact'}
   - {name: 'ENG', link: '/eng'}
   - {name: 'Home', link: '/eng'}
-  - {name: 'About', link: '/eng/about'}
+  - {name: 'About me', link: '/eng/about'}
   - {name: 'Contact', link: '/eng/contact'}
   - {name: 'PL', link: '/'}
 
