@@ -20,7 +20,7 @@ Większość efektów została osiągnięta poprzez jednostki cieniujące, wśr�
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl_water/fresnel.jpg)
 
 - Efekt mętnej wody - utworzona została mapa głębokości zbiornika wody. Na jej podstawie dodany kolor niebieski jest coraz bardziej intensywny w niżej położonych obszarach. Nadaje to efekt mętności, w głębinach nie jesteśmy w stanie wyraźnie dostrzec odbicia i refrakcji.
-- Zanikające krawędzi - za pomocą manipulacji składowej alfa koloru wody, staje się ona coraz mnie widoczna przy brzegach zbiornika.
+- Zanikające krawędzi - za pomocą manipulacji składowej alfa koloru wody, staje się ona coraz mniej widoczna przy brzegach zbiornika.
 - Mapy dudv - w celu wprawienia wody w ruch zastosowane zostały dwie metody. Jedna z nich to mapy dudv. Z wczytanych tekstur pobierane są wartości nasycenia kolorów zielonego i czerwonego, na podstawie których nakładane na wodę zostają zniekształcenia. Tekstura przesuwana jest po tafli wody w czasie, dzięki czemu woda zdaje się być w ruchu.
 - Poruszanie wierzchołków - drugą metodą wprawienia tafli wody w ruch jest manipulacja jej siatką wierzchołków.
 

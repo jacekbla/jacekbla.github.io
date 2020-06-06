@@ -5,7 +5,7 @@ date:   2018-03-28 23:12:50 +0100
 featured-img: minmax
 ---
 ## Cel projektu
-Głównym celem projektu była implementacja silnika gry „Stratego” oraz zapoznanie się i przenalizowanie algorytmów rozwiązywania gier logicznych. Aplikacja została zbudowana z pomocą bibliotek zewnętrzych **Qt**.  
+Głównym celem projektu była implementacja silnika gry „Stratego” oraz zapoznanie się i przeanalizowanie algorytmów rozwiązywania gier logicznych. Aplikacja została zbudowana z pomocą bibliotek zewnętrznych **Qt**.  
 Gra polega na zajmowaniu kolejnych pól na planszy. W czasie swojego ruchu gracz wybiera wolne pole, które chce zająć. Jeżeli wybrane pole tworzy z innymi zajętymi polami co najmniej jedną linię (od krawędzi planszy do krawędzi), składającą się z przynajmniej 3 pól, otrzymuje on wówczas liczbę punktów równą liczbie pól, z których składają się wszystkie linie przechodzące przez zajęte pole. Gracze wykonują ruchy na przemian. Niektóre warianty gry przewidują punkty tylko za pola wcześniej zajęte przez jednego z graczy oraz po jednym punkcie za każdą linię, niezależnie od długości. Rozmiary planszy można zmienić w menu opcji.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/stratego/stratego.jpg)
@@ -26,7 +26,7 @@ Przycinanie alfa-beta to algorytm wyszukiwania, który ma na celu zmniejszenie l
 Zastosowane zostały 3 heurystyki do oceny stanu gry:
 - standardowa – kolory (kto zajął dany węzeł) nie mają znaczenia, punkty przyznawane za pełną linię od krawędzi do krawędzi. Liczba punktów równa długość linii.
 - kolorowa – kolory mają znaczenie, punkty przyznawane za pełną linię od krawędzi do krawędzi. Liczba punktów wynosi tyle co liczba pól o kolorze gracza w linii.
-- jeden za linie – niezależnie od koloru i długości gracz otrzumuje 1 punkt po domknięciu linii.
+- jeden za linie – niezależnie od koloru i długości gracz otrzymuje 1 punkt po domknięciu linii.
 
 #### Heurystyki wyboru kolejności węzłów
 Zaimplementowane zostały 2 heurystyki wyboru kolejności węzłów:

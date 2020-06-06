@@ -33,7 +33,7 @@ Przykładowe obrazy wyjściowe:
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tpdia/example_imgs.jpg)
 
 ### Wykorzystane biblioteki zewnętrzne
-Jak już zostało wspomniane zdecydowaliśmy się na prace z językiem **Python** ze względu na potężne zaplecze w dziedzinie uczenia maszynowego i sieci neuronowych. W szczególności zależało nam na wykorzystaniu następujących bibliotek:
+Jak już zostało wspomniane zdecydowaliśmy się na pracę z językiem **Python** ze względu na potężne zaplecze w dziedzinie uczenia maszynowego i sieci neuronowych. W szczególności zależało nam na wykorzystaniu następujących bibliotek:
 - Tensorflow
 - Keras
 - NumPy

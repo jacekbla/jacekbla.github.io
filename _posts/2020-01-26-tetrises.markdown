@@ -16,7 +16,7 @@ Mniej złożona projekt, aplikacja składa się tylko z jednego ekranu. Ustawien
 [BitBucket](https://bitbucket.org/jacekbla/python_tetris)
 
 ## .NET
-Aplikacja bardzo podobna do Python'owego odpowiednika, ale poszerzona o kilka dodatkowych funkcjonalności. Przede wszystkim zawiera menu główne i dostęp do kilku różnych ekranów. Wśród nich uzytkownik może zmienić opcje gry oraz sprawdzić najlepsze wyniki. 
+Aplikacja bardzo podobna do Python'owego odpowiednika, ale poszerzona o kilka dodatkowych funkcjonalności. Przede wszystkim zawiera menu główne i dostęp do kilku różnych ekranów. Wśród nich użytkownik może zmienić opcje gry oraz sprawdzić najlepsze wyniki. 
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/tetris/menu.jpg)
 

@@ -14,13 +14,12 @@ The project is my master's thesis and is not yet finished.
 
 ## Methods for improving performance
 The project will implement methods such as:
-- Mipmapping
-- Occlusion culling
 - Backface culling
 - View frustrum culling
-- Far Clip plane
-- Level of Detail manipulation
-- Texture atlases
+- Level of Detail
+- Instanced Rendering
+- Mipmapping
+- Anisotropic Filtering
 
 ## Work status
 The basic version of the graphics engine has now been built. This version doesn't uses any of the studied techniques - it will be the basis on which the analysis will be carried out.
@@ -39,6 +38,14 @@ The engine has mechanisms to display the basic scene:
 - Skybox - a cube-based skybox has been implemented as the background of the scene.
 - Fog - depending on the distance, objects on the stage become less visible. 
 - Camera control - supports mouse and keyboard.  
+
+## Application development and tests
+Then further efficiency improvement techniques were added to the engine and tests were carried out. In order to determine and measure the impact of a given method on the overall efficiency of the graphics engine, it was necessary to define indicators representing the level of solution's quality. They included parameters such as: frame time, number of frames per second, number of polygons per second, average number of rendered triangles, average number of rendered objects, CPU and GPU stress load and amount of memory used.
+Tests were carried out on stages with different parameters to thoroughly examine the program's capabilities. External tools and internal measuring mechanisms were used to measure engine performance.
+
+## Work results
+The aim of the project was accomplished - the impact of methods that, without prejudice to the quality of the generated image, were able to significantly improve the performance of the graphics engine, was thoroughly analyzed and tested. In some cases, the frame time has been reduced by 95% compared to the basic engine version. During the work, I was also able to get familiarized with theoretical and implementation details of rendering applications.
+
 
 [BitBucket](https://bitbucket.org/jacekbla/opengl1)
 
