@@ -5,23 +5,23 @@ date:   2020-04-19 00:12:50 +0100
 featured-img: ogl1
 ---
 ## Cel projektu
-Celem pracy jest implementacja silnika graficznego wykorzystującego API graficzne **OpenGL** oraz narzędzia pomocnicze **GLFW** i **GLEW**. W ramach pracy stopniowo dodawane były różne metody poprawiające wydajność narzędzia. Praca skupia się na badaniu wpływu tych technik na ogólną sprawność silnika. W tym celu zostały wyznaczone parametry, na podstawie których możliwa była ocena pracy narzędzia. Testy zostały przeprowadzone na wielu scenach, z wykorzystaniem rozmaitych obiektów w taki sposób, aby przeanalizować różne aspekty pracy silnika.
-
-Projekt stanowi moją pracę magisterską, nie jest jeszcze skończony.
+Celem pracy jest implementacja silnika graficznego wykorzystującego API graficzne **OpenGL** oraz narzędzia pomocnicze **GLFW** i **GLEW**. W ramach pracy stopniowo dodawane były różne metody poprawiające wydajność narzędzia. Praca skupia się na badaniu wpływu tych technik na ogólną sprawność silnika. W tym celu zostały wyznaczone parametry, na podstawie których możliwa była ocena pracy silnika. Testy zostały przeprowadzone na wielu scenach, z wykorzystaniem rozmaitych obiektów w taki sposób, aby przeanalizować różne aspekty pracy silnika.
 
 ![](https://raw.githubusercontent.com/jacekbla/jacekbla.github.io/master/assets/img/posts/content/ogl/ogl.jpg)
 
 ## Zaimplementowane metody poprawy wydajności
-Projekt przewiduje implementację takich technik jak:
-- Backface culling
-- View frustrum culling
-- Manipulacja poziomem detali (Level of Detail)
+W ramach pracy zaimplementowane zostały następujące techniki:
+- Odrzucanie tylnych powierzchni (Backface culling)
+- Odrzucanie obiektów spoza bryły widoku (View frustrum culling)
+- Manipulacja poziomem szczegółów (Level of Detail)
 - Renderowanie Instancyjne (Instanced Rendering)
 - Mipmapping
-- Anisotropic Filtering
+
+W celach porównawczych zaimplementowałem również filtrowanie anizotropowe – metoda działająca na zasadzie podobnej do mipmappingu, ale skupiająca się na poprawie jakości obrazu, a nie wydajności.
+
 
 ## Aplikacja podstawowa
-Zbudowana została podstawowa wersja silnika graficznego. Ta postać nie wykorzystuje żadnej z badanych technik - będzie stanowiła bazę, na podstawie której przeprowadzona zostanie analiza.
+Zbudowana została podstawowa wersja silnika graficznego, która nie wykorzystuje żadnej z badanych technik - stanowiła bazę, na podstawie której przeprowadzona została analiza.
 Silnik posiada mechanizmy umożliwiające wyświetlenie podstawowej sceny:
 - Obsługa modeli w formacie .obj i tekstur w formacie .bmp i .png.
 - Model oświetlenia – wykorzystuje światło rozproszone i zwierciadlane.
@@ -41,10 +41,10 @@ Silnik posiada mechanizmy umożliwiające wyświetlenie podstawowej sceny:
 
 ## Rozwój aplikacji i testy
 Następnie do silnika dodawano kolejne techniki poprawy wydajności oraz przeprowadzone zostały testy. W celu określenia i zmierzenia wpływu danej metody na ogólną sprawność silnika graficznego należało zdefiniować wskaźniki reprezentujące poziom jakości rozwiązania. Obejmowały one parametry takie jak: czas trwania klatki, liczba klatek na sekundę, liczba wielokątów na sekundę, średnia liczba renderowanych trójkątów, średnia liczba renderowanych obiektów, obciążenie procesora, karty graficznej oraz ilość zajmowanej pamięci. 
-Testy zostały przeprowadzone na scenach o różnych parametrach mających na celu dokładne przebadanie możliwości programu. Do zmierzenia wydajności silnika wykorzystane zostały narzędzia zewnętrzne oraz wewnętrzne mechanizmy pomiarowe. 
+Testy zostały przeprowadzone na scenach o różnych parametrach mających na celu dokładne przebadanie możliwości programu. Do zmierzenia wydajności silnika wykorzystane zostały narzędzia zewnętrzne oraz wewnętrzne mechanizmy pomiarowe.
 
 ## Wyniki pracy
-Cel pracy został zrealizowany - wpływ metod, które bez uszczerbku na jakości generowanego obrazu, były w stanie znacznie poprawić wydajność silnika graficznego, został dokładnie przeanalizowany i przetestowany. W niektórych przypadkach czas trwania klatki został zmniejszony o 95% względem podstawowej wersji silnika. W trakcie prac zaznajomiono się również ze szczegółami teoretycznymi i implementacyjnymi aplikacji renderujących.
+Cel pracy został zrealizowany - wpływ metod, które bez uszczerbku na jakości generowanego obrazu były w stanie znacznie poprawić wydajność silnika graficznego, został dokładnie przeanalizowany i przetestowany. W niektórych przypadkach czas trwania klatki został zmniejszony nawet o 95% względem podstawowej wersji silnika. W trakcie prac zaznajomiono się również ze szczegółami teoretycznymi i implementacyjnymi aplikacji renderujących.
 
 
 [BitBucket](https://bitbucket.org/jacekbla/opengl1)
